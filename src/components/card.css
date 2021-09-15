@@ -1,0 +1,24 @@
+.card{
+    padding: 8px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.card:hover{
+    box-shadow: 0 0 2px black;
+}
+
+.card > .header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card > .body{
+    margin-top: 4px;
+   
+}
+
+.card > .body > .description{
+    font-size: 0.9em;
+    color: gray;
+}

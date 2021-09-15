@@ -1,0 +1,1 @@
+export const uniqueValuesOfArray = (value, index, array) => array.indexOf(value) === index
