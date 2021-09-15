@@ -1,0 +1,20 @@
+---
+slug: "/faqs/elasticsearch-document-level-security"
+date: "2020-09-15"
+title: "Document level security"
+description: "Give to an user permissions for specific Elasticsearch documents"
+tags: "elasticsearch,permissions"
+version: ""
+---
+
+### Problem
+
+```
+Give to an user permissions for specific Elasticsearch documents
+```
+
+### Solution
+
+Depends on your environment:
+- Open Distro for Elasticsearch: https://opendistro.github.io/for-elasticsearch-docs/docs/security/access-control/document-level-security/
+- X-Pack: https://www.elastic.co/guide/en/elasticsearch/reference/current/document-level-security.html

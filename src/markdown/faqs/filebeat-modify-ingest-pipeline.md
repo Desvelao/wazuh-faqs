@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/filebeat_modify_ingest_pipeline"
+slug: "/faqs/filebeat-modify-ingest-pipeline"
 date: "2020-09-15"
 title: "Modify ingest pipeline"
 description: "modify-ingest-pipeline"
@@ -15,7 +15,7 @@ Modify the ingests pipeline for alerts or archives
 
 ### Solution
 
-1. Edit the `pipeline.json` file of the module you want to edit.
+1. Edit the `pipeline.json` file of the module you want to modify.
 
 - `alerts`: `/usr/share/filebeat/module/wazuh/alerts/ingest/pipeline.json`
 - `archives`: `/usr/share/filebeat/module/wazuh/archives/ingest/pipeline.json`
@@ -34,4 +34,4 @@ GET _ingest/pipeline
 
 Review the change is updated.
 
-> Note: The changes in the pipelines affects to the new documents, not the older
+> Note: The changes in the pipelines affect to the new documents, not the older ones.
