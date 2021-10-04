@@ -16,7 +16,7 @@ function FAQsIndex({data}) {
         <Layout>
             <div className="mb-8">
                 <div className="d-flex">
-                    <div className="mb-4 ml-4 mr-4" style={{minWidth: "15%"}}>
+                    <div className="mb-4 ml-4 mr-4" style={{minWidth: "15%", flexBasis: "15%"}}>
                         <div className="mb-8">
                             <input
                                 className="input mb-8 mr-8"
@@ -46,11 +46,22 @@ function FAQsIndex({data}) {
                         </div>
                     </div>
                     <div className="ml-4 mr-4">
-                        <div className="d-flex mb-4" style={{justifyContent: 'space-between'}}>
+                        <div className="d-flex mb-4" style={{ flexWrap: "wrap"}}>
                             {allMarkdownRemark.edges
                                 .filter(({node: {frontmatter: {description, tags, title}}}) => [description, title, tags].some(k => k && k.toLowerCase().includes(searchTerm.toLowerCase())))
                                 .filter(({node: {frontmatter: {tags}}}) => filterTags.length ? tags.split(',').some(tag => filterTags.includes(tag)) : true)
-                                .map(({node: {frontmatter}}) => <Card className="mb-4 ml-4 mr-4" title={<Link to={frontmatter.slug}>{frontmatter.title}</Link>} description={frontmatter.description} tags={frontmatter.tags.split(',').map(tag => <Tag key={tag} tag={tag} />)} key={frontmatter.slug} onClick={() => {navigate(`${frontmatter.slug}/`)}}/>)
+                                .map(({node: {frontmatter}}) => (
+                                    <div style={{flexBasis:"33.33%", width: '100%'}}>
+                                        <Card
+                                            className="mb-4 ml-4 mr-4"
+                                            title={<Link to={frontmatter.slug}>{frontmatter.title}</Link>}
+                                            description={frontmatter.description}
+                                            tags={frontmatter.tags.split(',').map(tag => <Tag key={tag} tag={tag} />)}
+                                            key={frontmatter.slug}
+                                            onClick={() => {navigate(`${frontmatter.slug}/`)}}
+                                        />
+                                    </div>
+                                ))
                             }
                         </div>
                     </div>
