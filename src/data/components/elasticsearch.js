@@ -66,7 +66,7 @@ export const ElasticsearchInfo = {
     {
       label: "Logs - get logs filterring by errors or warnings",
       value:
-        '/var/log/elasticsearch/<CLUSTER_NAME>.log | grep -i -E "err|warn"',
+        'cat /var/log/elasticsearch/<CLUSTER_NAME>.log | grep -i -E "err|warn"',
     },
   ],
 }
