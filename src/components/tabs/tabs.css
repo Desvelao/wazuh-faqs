@@ -1,0 +1,23 @@
+.tabs::after {
+  content: "";
+  display: "block" !important;
+  border-bottom: 1px solid var(--color-primary);
+  height: 2px;
+}
+
+.tabs ul {
+  padding: 0;
+}
+
+.tabs li {
+  color: var(--color-primary);
+  display: inline;
+  list-style: none;
+  padding: 5px 5px 2px;
+}
+
+.tabs li.tab-selected {
+  background-color: var(--color-primary);
+  border-radius: 3px;
+  color: var(--color-primary-contrast);
+}

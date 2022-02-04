@@ -1,0 +1,17 @@
+:root {
+  --color-primary: #2274a5;
+  --color-primary-contrast: white;
+  --color-primary-shadow: #131b23;
+  --color-secondary: #e7dfc6;
+  --color-success: yellow;
+  --color-warning: yellow;
+  --color-error: yellow;
+  --color-link: green;
+  --color-subdued: gray;
+  --color-contrast: #131b23;
+  --color-markdown-code: lightgray;
+  --color-faq-code: gainsboro;
+  --spacer-s: 5px;
+  --spacer-m: 12px;
+  --spacer-l: 18px;
+}

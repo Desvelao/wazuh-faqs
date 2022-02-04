@@ -7,13 +7,13 @@ tags: "filebeat,ingest,pipeline"
 version: ""
 ---
 
-### Problem
+### Issue
 
 ```
 Modify the ingests pipeline for alerts or archives
 ```
 
-### Solution
+### Remediation
 
 1. Edit the `pipeline.json` file of the module you want to modify.
 

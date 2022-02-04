@@ -7,15 +7,15 @@ tags: "filebeat,archives"
 version: ""
 ---
 
-### Problem
+### Issue
 
 ```
 Enable `archives` of wazuh Filebeat module
 ```
 
-### Solution
+### Remediation
 
-1. Edit the Filebeat configuration `filebeat.ym` located in `/etc/filebeat/filebeat.yml`. Enable the module changing the `archives` `enabled` property to `true`.
+1. Edit the Filebeat configuration `filebeat.yml` located in `/etc/filebeat/filebeat.yml`. Enable the module changing the `archives` `enabled` property to `true`.
 
 ```
 filebeat.modules:
@@ -33,4 +33,3 @@ systemctl restart filebeat
 # or
 service restart filebeat
 ```
-

@@ -1,0 +1,11 @@
+.spacer-s {
+  height: var(--spacer-s);
+}
+
+.spacer-m {
+  height: var(--spacer-m);
+}
+
+.spacer-l {
+  height: var(--spacer-l);
+}

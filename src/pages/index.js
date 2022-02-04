@@ -156,7 +156,7 @@ const IndexPage = () => {
             {docLink.text}
           </a>
         </li>
-        {links.map(link => (
+        {links.map((link) => (
           <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
             <span>
               <a
@@ -183,6 +183,10 @@ const IndexPage = () => {
   )
 }
 
-export default function HomePage(){
-  return <Layout><div>Home</div></Layout>
+export default function HomePage() {
+  return (
+    <Layout>
+      <div>Home</div>
+    </Layout>
+  )
 }

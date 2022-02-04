@@ -7,18 +7,18 @@ tags: "elasticsearch,shards"
 version: ""
 ---
 
-### Problem
+### Issue
 
 ```
 "Validation Failed: 1: this action would add [2] total shards, but this cluster currently has [999]/[1000] maximum shards open;"
 ```
 
-### Solution
+### Remediation
 
 This means you reached the shards limit count (`1000` by default in the node). To fix this issue, there are multiple options:
 
 - **Delete indices**. This frees shards. You could do it with old indices you don't want/need. Or even, you could automate it with ILM/ISM policies to delete old indices after a period of time as explained in this post: https://wazuh.com/blog/wazuh-index-management.
-***Note:*** *ILM: Index Lifecicle Management (used by X-Pack). ISM: Index State Management (used by Open Distro for Elasticsearch)*
+  **_Note:_** _ILM: Index Lifecicle Management (used by X-Pack). ISM: Index State Management (used by Open Distro for Elasticsearch)_
 
 - **Add more nodes** to your Elasticserach cluster.
 

@@ -7,15 +7,15 @@ tags: "elasticsearch,permissions"
 version: ""
 ---
 
-### Problem
+### Issue
 
 ```
 Give to an user permissions for specific Elasticsearch documents
 ```
 
-### Solution
+### Remediation
 
 Depends on your environment:
+
 - Open Distro for Elasticsearch: https://opendistro.github.io/for-elasticsearch-docs/docs/security/access-control/document-level-security/
 - X-Pack: https://www.elastic.co/guide/en/elasticsearch/reference/current/document-level-security.html
-
