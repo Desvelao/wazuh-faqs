@@ -1,7 +1,7 @@
 import React from "react"
 import "./table.css"
-import { Copyable } from "../../../../../../../../home/toni/projects/gatsby/my-gatsby-site/src/components"
 import { copyToClipboard } from "../../utils"
+import { Copyable } from "../copyable/copyable"
 
 export function Table({ columns, rows }) {
   return (
