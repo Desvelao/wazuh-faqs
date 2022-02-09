@@ -5,13 +5,21 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `faqs`,
-        path: `${__dirname}/src/markdown/faqs`,
+        name: "faqs",
+        path: `${__dirname}/src/data/faqs`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "apps",
+        path: `${__dirname}/src/data/apps`,
+      },
+    },
+    "gatsby-transformer-remark",
+    "gatsby-transformer-json",
   ],
   pathPrefix: "/wazuh-faqs",
 }

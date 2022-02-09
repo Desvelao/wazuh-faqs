@@ -1,8 +1,8 @@
 {
-  "name": "my-gatsby-site",
+  "name": "wazuh-faqs",
   "version": "1.0.0",
   "private": true,
-  "description": "My Gatsby Site",
+  "description": "Wazuh FAQs",
   "author": "Desvelao",
   "keywords": [
     "gatsby"
@@ -19,6 +19,7 @@
   "dependencies": {
     "gatsby": "^3.8.1",
     "gatsby-source-filesystem": "^3.8.0",
+    "gatsby-transformer-json": "^4.6.0",
     "gatsby-transformer-remark": "^4.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

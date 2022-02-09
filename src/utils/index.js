@@ -17,7 +17,6 @@ export const copyToClipboard = (str) => {
 export const classNames = (names) =>
   Object.entries(names)
     .filter(([key, value]) => {
-      console.log([key, value])
       if (typeof value === "function") {
         return value()
       } else {

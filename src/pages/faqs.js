@@ -85,17 +85,14 @@ function FAQsIndex({ data }) {
                   <div style={{ flexBasis: "33.33%", width: "100%" }}>
                     <Card
                       className="mb-4 ml-4 mr-4"
-                      title={
-                        <Link to={frontmatter.slug}>{frontmatter.title}</Link>
-                      }
+                      title={frontmatter.title}
                       description={frontmatter.description}
                       tags={frontmatter.tags.split(",").map((tag) => (
                         <Tag key={tag}>{tag}</Tag>
                       ))}
                       key={frontmatter.slug}
                       onClick={() => {
-                        console.log(frontmatter.slug)
-                        navigate(`${frontmatter.slug}/`)
+                        navigate(`${frontmatter.slug}`)
                       }}
                     />
                   </div>

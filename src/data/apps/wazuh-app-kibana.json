@@ -1,0 +1,164 @@
+{
+  "name": "Wazuh app for Kibana",
+  "slug": "wazuh-app-kibana",
+  "description": "Navigate through the Wazuh data using visualizations in a simple and understandable way. It also allows you to manage the configuration and capabilities of the Wazuh server.",
+  "documentationLink": "https://github.com/wazuh/wazuh-kibana-app",
+  "icon": "",
+  "content": [
+    {
+      "type": "table",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "id": "value",
+            "label": "Value",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Installation folder",
+            "value": "<KIBANA_PATH>/plugins/wazuh"
+          }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Wazuh version >= 4.1",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "id": "value",
+            "label": "Value",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "App data",
+            "value": "<KIBANA_PATH>/data/wazuh"
+          },
+          {
+            "description": "Configuration file",
+            "value": "<APP_DATA>/config/wazuh.yml"
+          },
+          {
+            "description": "Registry file",
+            "value": "<APP_DATA>/config/wazuh-registry.json"
+          },
+          {
+            "description": "Logs - plain",
+            "value": "<APP_DATA>/logs/wazuh-plain.log"
+          },
+          {
+            "description": "Logs",
+            "value": "<APP_DATA>/logs/wazuhapp.log"
+          }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Wazuh version 3.13.x - 4.0.x",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "id": "value",
+            "label": "Value",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "App data",
+            "value": "<KIBANA_PATH>/optimize/wazuh"
+          },
+          {
+            "description": "Configuration file",
+            "value": "<APP_DATA>/config/wazuh.yml"
+          },
+          {
+            "description": "Registry file",
+            "value": "<APP_DATA>/config/wazuh-registry.json"
+          },
+          {
+            "description": "Logs - plain",
+            "value": "<APP_DATA>/logs/wazuh-plain.log"
+          },
+          {
+            "description": "Logs",
+            "value": "<APP_DATA>/logs/wazuhapp.log"
+          }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Wazuh version < 3.13",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "id": "value",
+            "label": "Value",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "App data",
+            "value": "<KIBANA_PATH>/optimize/wazuh"
+          },
+          {
+            "description": "Configuration file",
+            "value": "<APP_DATA>/config/wazuh.yml"
+          },
+          {
+            "description": "Registry file",
+            "value": "<KIBANA_PATH>/plugins/wazuh/server/wazuh-registry.json"
+          },
+          {
+            "description": "Logs - plain",
+            "value": "<APP_DATA>/logs/wazuh-plain.log"
+          },
+          {
+            "description": "Logs",
+            "value": "<APP_DATA>/logs/wazuhapp.log"
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [
+    {
+      "label": "Remove bundles",
+      "value": "rm -rf /usr/share/kibana/optimize/bundles"
+    }
+  ],
+  "debug": [
+    {
+      "label": "Logs - get all logs",
+      "value": "cat <APP_DATA>/logs/wazuh-plain.log"
+    },
+    {
+      "label": "Logs - filter errors and warnings",
+      "value": "cat <APP_DATA>/logs/wazuh-plain.log | grep -i -E \"err|warn\""
+    }
+  ]
+}

@@ -12,8 +12,8 @@ const menuLinks = [
     label: "FAQs",
   },
   {
-    link: "/info",
-    label: "Info",
+    link: "/apps",
+    label: "Apps",
   },
 ]
 
