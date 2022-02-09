@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/filebeat-modify-ingest-pipeline"
+slug: "filebeat-modify-ingest-pipeline"
 date: "2020-09-15"
 title: "Modify ingest pipeline"
 description: "modify-ingest-pipeline"

@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/elasticsearch-document-level-security"
+slug: "elasticsearch-document-level-security"
 date: "2020-09-15"
 title: "Document level security"
 description: "Give to an user permissions for specific Elasticsearch documents"

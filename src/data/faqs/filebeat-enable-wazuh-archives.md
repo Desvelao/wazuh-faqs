@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/filebeat-enable-wazuh-archives"
+slug: "filebeat-enable-wazuh-archives"
 date: "2020-09-15"
 title: "Enable Wazuh archives"
 description: "archives"

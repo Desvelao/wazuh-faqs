@@ -1,5 +1,5 @@
 import React from "react"
-import { Layout, Card } from "../components"
+import { Layout, Card } from "../../components"
 import { graphql, navigate } from "gatsby"
 
 export default function Apps(props) {
@@ -15,7 +15,7 @@ export default function Apps(props) {
               description={node.description}
               className="mb-4 ml-4 mr-4"
               onClick={() => {
-                navigate(`${node.slug}`)
+                navigate(node.slug)
               }}
             ></Card>
           </div>

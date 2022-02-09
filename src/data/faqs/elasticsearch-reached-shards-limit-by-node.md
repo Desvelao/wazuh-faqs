@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/elasticsearch-reached-shards-limit-by-node"
+slug: "elasticsearch-reached-shards-limit-by-node"
 date: "2020-09-15"
 title: "Reached the shards limit by node"
 description: "shards limits"

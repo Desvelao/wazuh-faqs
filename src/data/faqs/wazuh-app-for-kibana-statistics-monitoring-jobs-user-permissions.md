@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/wazuh-app-for-kibana-statistics-monitoring-jobs-user-permissions"
+slug: "wazuh-app-for-kibana-statistics-monitoring-jobs-user-permissions"
 date: "2020-09-15"
 title: "Wazuh app backend jobs permissions"
 description: "Give to the Kibana internal user permissions for run Wazuh app backend jobs"

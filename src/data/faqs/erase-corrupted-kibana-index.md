@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/erase-corrupted-kibana-index"
+slug: "erase-corrupted-kibana-index"
 date: "2021-09-28"
 title: "Erase corrupted kibana index"
 description: "Stpes to remove and reset the Kibana index whent it is corrupted"

@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { useState } from "react"
-import { Card, LabelCheckbox, Tag, Layout } from "../components"
+import { Card, LabelCheckbox, Tag, Layout } from "../../components"
 import { navigate } from "@reach/router"
 
 function FAQsIndex({ data }) {
@@ -51,7 +51,7 @@ function FAQsIndex({ data }) {
                 .filter((value, index, array) => array.indexOf(value) === index)
                 .sort()
                 .map((tag) => (
-                  <div className="mr-4 mb-8 ml-4">
+                  <div className="mr-4 mb-8 ml-4" key={tag}>
                     <LabelCheckbox label={tag} onChange={onChangeSelectTag} />
                   </div>
                 ))}
@@ -82,7 +82,7 @@ function FAQsIndex({ data }) {
                       : true
                 )
                 .map(({ node: { frontmatter } }) => (
-                  <div style={{ flexBasis: "33.33%", width: "100%" }}>
+                  <div style={{ flexBasis: "33.33%", width: "100%" }} key={frontmatter.slug}>
                     <Card
                       className="mb-4 ml-4 mr-4"
                       title={frontmatter.title}
@@ -90,9 +90,8 @@ function FAQsIndex({ data }) {
                       tags={frontmatter.tags.split(",").map((tag) => (
                         <Tag key={tag}>{tag}</Tag>
                       ))}
-                      key={frontmatter.slug}
                       onClick={() => {
-                        navigate(`${frontmatter.slug}`)
+                        navigate('/faqs/' + frontmatter.slug + '/')
                       }}
                     />
                   </div>
@@ -108,7 +107,7 @@ function FAQsIndex({ data }) {
 export default FAQsIndex
 
 export const query = graphql`
-  query FAQIndexQuery {
+  query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/filebeat-hide-plain-configuration-values"
+slug: "filebeat-hide-plain-configuration-values"
 date: "2020-09-15"
 title: "Hide sensitive values in the Filebeat configuration file"
 description: "Hide sensitive values in the Filebeat configuration file as credentials, urls"

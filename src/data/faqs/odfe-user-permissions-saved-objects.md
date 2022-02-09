@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/odfe-user-permissions-saved-objects"
+slug: "odfe-user-permissions-saved-objects"
 date: "2020-09-15"
 title: "Share saved objects"
 description: "Give to an user permissions for specific saved objects"

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import { Button, Layout, Tag } from "../components"
-import { copyToClipboard } from "../utils"
+import { Button, Layout, Tag } from "../../components"
+import { copyToClipboard } from "../../utils"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -20,7 +20,7 @@ export default function Template({
         <Button
           onClick={() => {
             if (!fetchRemediationText) {
-              const fileUrl = `https://raw.githubusercontent.com/Desvelao/wazuh-faqs/main/src/markdown/${frontmatter.slug}.md`
+              const fileUrl = `https://raw.githubusercontent.com/Desvelao/wazuh-faqs/main/src/data/faqs/${frontmatter.slug}.md`
               console.log(`Fetching file: ${fileUrl}`)
               fetch(fileUrl)
                 .then((response) => response.text())
@@ -56,6 +56,7 @@ const reRemediation = /### Remediation\n\n([\s\S]*)/
 
 const getFAQRemediationFromMarkdown = (str) => {
   const [_, result] = str.match(reRemediation) || [null, str]
+  return result
 }
 
 export const pageQuery = graphql`

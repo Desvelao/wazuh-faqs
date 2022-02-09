@@ -15,6 +15,7 @@ export const Tabs = ({ tabs }) => {
                 "tab-selected": tab.id === selectedTab,
               })}`}
               onClick={() => setSelectedTab(tab.id)}
+              key={`tab-${tab.id}`}
             >
               {tab.label}
             </li>

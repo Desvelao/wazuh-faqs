@@ -1,5 +1,5 @@
 ---
-slug: "/faqs/wazuh-app-for-kibana-missing-token-cookie"
+slug: "wazuh-app-for-kibana-missing-token-cookie"
 date: "2021-10-08"
 title: "Error 429 on healthcheck missing API"
 description: "Ensure the wz-token is stored properly"
