@@ -14,4 +14,8 @@
   --spacer-s: 5px;
   --spacer-m: 12px;
   --spacer-l: 18px;
+  --tooltip-text-color: white;
+  --tooltip-background-color: black;
+  --tooltip-margin: 30px;
+  --tooltip-arrow-size: 6px;
 }
