@@ -9,7 +9,7 @@ export default function TemplateDataComponent({
 }) {
   const [{ content, commands, debug, name, description, documentationLink }] =
     nodes
-    
+
   return (
     <Layout>
       <div>

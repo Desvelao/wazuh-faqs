@@ -1,8 +1,7 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link, navigate } from "gatsby"
 import { useState } from "react"
 import { Card, LabelCheckbox, Tag, Layout } from "../../components"
-import { navigate } from "@reach/router"
 
 function FAQsIndex({ data }) {
   const { allMarkdownRemark } = data
@@ -82,7 +81,10 @@ function FAQsIndex({ data }) {
                       : true
                 )
                 .map(({ node: { frontmatter } }) => (
-                  <div style={{ flexBasis: "33.33%", width: "100%" }} key={frontmatter.slug}>
+                  <div
+                    style={{ flexBasis: "33.33%", width: "100%" }}
+                    key={frontmatter.slug}
+                  >
                     <Card
                       className="mb-4 ml-4 mr-4"
                       title={frontmatter.title}
@@ -91,7 +93,7 @@ function FAQsIndex({ data }) {
                         <Tag key={tag}>{tag}</Tag>
                       ))}
                       onClick={() => {
-                        navigate('/faqs/' + frontmatter.slug + '/')
+                        navigate(frontmatter.slug)
                       }}
                     />
                   </div>

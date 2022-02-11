@@ -15,9 +15,7 @@ export function Table({ columns, rows }) {
       </thead>
       <tbody>
         {rows.map((row, rowIndex) => (
-          <tr
-            key={`table-row-${rowIndex}`}
-          >
+          <tr key={`table-row-${rowIndex}`}>
             {columns.map((column, columnIndex) => (
               <td
                 {...(column.copyable
