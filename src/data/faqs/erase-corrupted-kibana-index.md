@@ -9,9 +9,7 @@ version: ""
 
 ### Issue
 
-```
-The .kibana index gets corrupted
-```
+The `.kibana` index gets corrupted.
 
 ### Remediation
 

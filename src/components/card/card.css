@@ -19,5 +19,5 @@
 
 .card > .body > .description {
   font-size: 0.9em;
-  color: gray;
+  color: var(--color-subdued);
 }

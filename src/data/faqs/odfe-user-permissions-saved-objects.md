@@ -9,9 +9,7 @@ version: ""
 
 ### Issue
 
-```
-Share saved objects in ODFE
-```
+Share saved objects in ODFE.
 
 ### Remediation
 

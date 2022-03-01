@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import { Button, Layout, Tag } from "../../components"
+import { Button, Layout, Tag, Spacer } from "../../components"
 import { copyToClipboard } from "../../utils"
 
 export default function Template({
@@ -37,12 +37,20 @@ export default function Template({
         >
           Copy Remediation
         </Button>
-        <div>
-          {frontmatter.tags &&
-            frontmatter.tags
+        {frontmatter.tags && (
+          <div>
+            {frontmatter.tags
               .split(",")
               .map((tag) => <Tag key={tag}>{tag}</Tag>)}
-        </div>
+            <Spacer />
+          </div>
+        )}
+        {frontmatter.description && (
+          <>
+            <div className="color-subdued">{frontmatter.description}</div>
+            <Spacer />
+          </>
+        )}
         <div
           className="faq-content"
           dangerouslySetInnerHTML={{ __html: html }}
@@ -69,6 +77,7 @@ export const pageQuery = graphql`
         title
         tags
         version
+        description
       }
     }
   }

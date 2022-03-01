@@ -9,9 +9,7 @@ version: ""
 
 ### Issue
 
-```
-Modify the ingests pipeline for alerts or archives
-```
+Modify the ingests pipeline for alerts or archives.
 
 ### Remediation
 

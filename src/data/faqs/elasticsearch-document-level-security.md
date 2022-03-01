@@ -9,9 +9,7 @@ version: ""
 
 ### Issue
 
-```
-Give to an user permissions for specific Elasticsearch documents
-```
+Give to an user permissions for specific Elasticsearch documents.
 
 ### Remediation
 

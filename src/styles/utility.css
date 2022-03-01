@@ -53,3 +53,7 @@
 .t-center {
   text-align: center;
 }
+
+.color-subdued{
+  color: var(--color-subdued)
+}

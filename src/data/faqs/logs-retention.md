@@ -9,9 +9,7 @@ version: ""
 
 ### Issue
 
-```
-Define mechanims to logs retention
-```
+Define mechanims to logs retention.
 
 ### Remediation
 

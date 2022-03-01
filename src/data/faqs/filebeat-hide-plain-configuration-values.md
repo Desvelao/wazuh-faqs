@@ -9,7 +9,7 @@ version: ""
 
 ### Issue
 
-Hide sensitive values in the configuration file
+Hide sensitive values in the configuration file.
 
 ### Remediation
 

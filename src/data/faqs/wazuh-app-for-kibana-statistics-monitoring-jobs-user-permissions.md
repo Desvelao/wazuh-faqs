@@ -9,9 +9,7 @@ version: ""
 
 ### Issue
 
-```
-Give to the Kibana internal user permissions for run Wazuh app backend jobs
-```
+Give to the Kibana internal user permissions for run Wazuh app backend jobs.
 
 ### Remediation
 

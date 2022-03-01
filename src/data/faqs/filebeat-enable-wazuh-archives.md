@@ -9,9 +9,7 @@ version: ""
 
 ### Issue
 
-```
-Enable `archives` of wazuh Filebeat module
-```
+Enable `archives` of `wazuh` module for Filebeat.
 
 ### Remediation
 

@@ -9,6 +9,8 @@ version: ""
 
 ### Issue
 
+Error in Elasticsearch:
+
 ```
 "Validation Failed: 1: this action would add [2] total shards, but this cluster currently has [999]/[1000] maximum shards open;"
 ```
