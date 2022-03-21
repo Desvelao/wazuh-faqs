@@ -124,9 +124,65 @@
           }
         ]
       }
+    },
+    {
+      "type": "table",
+      "title": "Backup folders/files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "File",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Manager - Configuration",
+            "value": "WAZUH_PATH/etc/ossec.conf"
+          },
+          {
+            "description": "Manager - Internal options",
+            "value": "WAZUH_PATH/etc/local_internal_options.conf"
+          },
+          {
+            "description": "Manager - Decoders",
+            "value": "WAZUH_PATH/etc/decoders/local_decoders.xml"
+          },
+          {
+            "description": "Manager - Rules",
+            "value": "WAZUH_PATH/etc/rules/local_rules.xml"
+          },
+          {
+            "description": "Manager - Client keys",
+            "value": "WAZUH_PATH/etc/client.keys"
+          },
+          {
+            "description": "API - Configuration",
+            "value": "WAZUH_PATH/etc/local_internal_options.conf"
+          },
+          {
+            "description": "API - Auth",
+            "value": "WAZUH_PATH/api/configuration/auth"
+          }
+        ]
+      }
     }
   ],
-  "commands": [],
+  "commands": [
+    {
+      "label": "Get version",
+      "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
+    },
+    {
+      "label": "Update template",
+      "value": "filebeat setup --index-management"
+    }
+  ],
   "debug": [
     {
       "label": "Logs - get all logs",

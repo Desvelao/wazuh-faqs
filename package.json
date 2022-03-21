@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "prettier": "npx prettier --write ."
+    "prettier": "npx prettier --write .",
+    "develop-docker": "docker run -itd --rm --name wazuh-faqs -w \"/home/node/app\" -v \"$(pwd):/home/node/app\" -p \"8000:8000\" node:14.15-alpine3.13 sh -c \"npm install -g gatsby-cli && gatsby develop -H \\\"0.0.0.0\\\"\""
   },
   "dependencies": {
     "gatsby": "^3.8.1",
