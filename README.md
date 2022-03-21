@@ -46,6 +46,23 @@ The server is running at http://localhost:8000.
 
 Edit the files to see your site update in real-time!
 
+### Develop with Docker
+
+- Downlaod the docker image
+```
+docker pull node:14.15-alpine3.13
+```
+
+- Create a container to install dependencies
+```
+docker run -itd --rm -w "/home/node/app" -v "$(pwd):/home/node/app" node:14.15-alpine3.13 npm install
+```
+
+- Create a container to develop
+```
+docker run -itd --rm --name wazuh-faqs -w "/home/node/app" -v "$(pwd):/home/node/app" -p "8000:8000" node:14.15-alpine3.13 sh -c "npm install -g gatsby-cli && gatsby develop -H \"0.0.0.0\""
+```
+
 3.  **Learn more**
 
 - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)

@@ -1,0 +1,140 @@
+{
+  "name": "Wazuh",
+  "slug": "wazuh",
+  "description": "Wazuh is a free and open source platform for threat detection, security monitoring, incident response and regulatory compliance. It can be used to monitor endpoints, cloud services and containers, and to aggregate and analyze data from external sources.",
+  "documentationLink": "https://documentation.wazuh.com/current/",
+  "icon": "",
+  "content": [
+    {
+      "type": "table",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "id": "value",
+            "label": "Value",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Installation folder (WAZUH_PATH)",
+            "value": "/var/ossec"
+          },
+          {
+            "description": "Configuration file",
+            "value": "WAZUH_PATH/etc/ossec.conf"
+          },
+          {
+            "description": "Local internal options file",
+            "value": "WAZUH_PATH/etc/local_internal_options.conf"
+          },
+          {
+            "description": "Logs",
+            "value": "WAZUH_PATH/logs"
+          },
+          {
+            "description": "Logs - Manager",
+            "value": "WAZUH_PATH/logs/ossec.log"
+          },
+          {
+            "description": "Logs - API",
+            "value": "WAZUH_PATH/logs/api.log"
+          },
+          {
+            "description": "Service",
+            "value": "wazuh-manager"
+          },
+          {
+            "description": "Bin",
+            "value": "WAZUH_PATH/bin/ossec-control"
+          },
+          {
+            "description": "Bin",
+            "value": "WAZUH_PATH/bin/wazuh-control"
+          }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Manager files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "Directory",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "User - lists",
+            "value": "WAZUH_PATH/etc/lists"
+          },
+          {
+            "description": "User - decpders",
+            "value": "WAZUH_PATH/etc/decoders"
+          },
+          {
+            "description": "User rules",
+            "value": "WAZUH_PATH/etc/rules"
+          },
+          {
+            "description": "Shared",
+            "value": "WAZUH_PATH/etc/shared"
+          },
+          {
+            "description": "Client keys",
+            "value": "WAZUH_PATH/etc/client.keys"
+          }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Alerts files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "File",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "JSON",
+            "value": "WAZUH_PATH/logs/alerts/alerts.json"
+          },
+          {
+            "description": "Log",
+            "value": "WAZUH_PATH/logs/alerts/alerts.log"
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [],
+  "debug": [
+    {
+      "label": "Logs - get all logs",
+      "value": "cat /var/ossec/logs/ossec.log"
+    },
+    {
+      "label": "Logs - filter errors and warnings",
+      "value": "cat /var/ossec/logs/ossec.log | grep -i -E \"err|warn\""
+    }
+  ]
+}
