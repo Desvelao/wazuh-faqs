@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql, Link, navigate } from "gatsby"
+import React, { useEffect } from "react"
+import { graphql, navigate } from "gatsby"
 import { useState } from "react"
 import { Card, LabelCheckbox, Tag, Layout } from "../../components"
 
-function FAQsIndex({ data }) {
+function FAQsIndex({ data, location }) {
   const { allMarkdownRemark } = data
   const [searchTerm, setSearchTerm] = useState("")
   const [filterTags, setFilterTags] = useState([])
@@ -12,7 +12,16 @@ function FAQsIndex({ data }) {
       ...filterTags.filter((tag) => tag !== e.target.value),
       ...(e.target.checked ? [e.target.value] : []),
     ])
-  }
+  };
+  useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const querySearch = params.get("q")
+    if(querySearch){
+      setSearchTerm(querySearch)
+      params.delete("q");
+      navigate("/faqs", {replace: true})
+    }
+  },[])
   return (
     <Layout>
       <div className="mb-8">
