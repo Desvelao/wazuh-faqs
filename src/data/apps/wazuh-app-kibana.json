@@ -147,6 +147,14 @@
   ],
   "commands": [
     {
+      "label": "Get version",
+      "value": "grep version package.json | head -n1 | awk -F: '{ print $2 }' | sed -e 's/[\" ,]//g'"
+    },
+    {
+      "label": "Get revision",
+      "value": "grep revision package.json | sed -e 's/[\" ,]//g' | awk -F: '{ print $2 }'"
+    },
+    {
       "label": "Remove bundles",
       "value": "rm -rf /usr/share/kibana/optimize/bundles"
     }

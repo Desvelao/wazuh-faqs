@@ -42,6 +42,10 @@
   ],
   "commands": [
     {
+      "label": "Get version",
+      "value": "filebeat version"
+    },
+    {
       "label": "Update pipelines",
       "value": "filebeat setup --pipelines"
     },

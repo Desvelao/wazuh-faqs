@@ -177,10 +177,6 @@
     {
       "label": "Get version",
       "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
-    },
-    {
-      "label": "Update template",
-      "value": "filebeat setup --index-management"
     }
   ],
   "debug": [

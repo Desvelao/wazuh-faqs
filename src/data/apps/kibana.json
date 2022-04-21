@@ -54,12 +54,24 @@
   ],
   "commands": [
     {
-      "label": "Install plugin - URL",
-      "value": "bin/kibana-plugin install <URL>"
+      "label": "Get version",
+      "value": "bin/kibana --version"
     },
     {
-      "label": "Install plugin - local file",
-      "value": "bin/kibana-plugin install <PATH/TO/LOCAL/FILE>"
+      "label": "Plugins - Install by URL",
+      "value": "bin/kibana-plugin install <url>"
+    },
+    {
+      "label": "Plugins - Install local file",
+      "value": "bin/kibana-plugin install file://<absolute_path_to_local_file>"
+    },
+    {
+      "label": "Plugins - Remove",
+      "value": "bin/kibana-plugin remove <plugin_name>"
+    },
+    {
+      "label": "Plugins - List",
+      "value": "bin/kibana-plugin list"
     }
   ],
   "debug": [

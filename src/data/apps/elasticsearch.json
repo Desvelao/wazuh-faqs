@@ -86,7 +86,16 @@
       ]
     }
   ],
-  "commands": [],
+  "commands": [
+    {
+      "label": "Get version",
+      "value": "bin/elasticsearch --version"
+    },
+    {
+      "label": "Plugins - List",
+      "value": "bin/elasticsearch-plugin list"
+    }
+  ],
   "debug": [
     {
       "label": "Logs - get logs filtering by errors or warnings",
