@@ -41,11 +41,11 @@ Check the logs of your platform:
   - All logs
 
     ```
-    journalctl -u kibana
+    journalctl -u wazuh-dashboard
     ```
 
   - Filtering by errors or warnings
 
     ```
-    journalctl -u kibana | grep -i -E "err|warn"
+    journalctl -u wazuh-dashboard | grep -i -E "err|warn"
     ```
