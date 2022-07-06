@@ -11,7 +11,7 @@ version: ""
 
 Message displayed when accessing to the URL where is exposed the platform:
 - Kibana server is not ready yet 
-- Wazuh server is not ready yet
+- Wazuh dashboard server is not ready yet
 
 
 ### Remediation
