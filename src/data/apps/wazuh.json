@@ -177,6 +177,14 @@
     {
       "label": "Get version",
       "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
+    },
+    {
+      "label": "Get version - use wazuh-control info",
+      "value": "/var/ossec/info/wazuh-control info | grep VERSION"
+    },
+    {
+      "label": "Get info",
+      "value": "/var/ossec/info/wazuh-control info"
     }
   ],
   "debug": [
@@ -186,7 +194,7 @@
     },
     {
       "label": "Logs - filter errors and warnings",
-      "value": "cat /var/ossec/logs/ossec.log | grep -i -E \"err|warn\""
+      "value": "grep -i -E \"err|warn\" /var/ossec/logs/ossec.log"
     }
   ]
 }

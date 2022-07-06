@@ -21,10 +21,6 @@
         ],
         "rows": [
           {
-            "description": "App data",
-            "value": "TODO"
-          },
-          {
             "description": "Logs",
             "value": "/opt/splunk/var/log/splunk/SplunkAppForWazuh.log"
           }
@@ -40,7 +36,7 @@
     },
     {
       "label": "Logs - filter errors and warnings",
-      "value": "cat /opt/splunk/var/log/splunk/SplunkAppForWazuh.log | grep -i -E \"err|warn\""
+      "value": "grep -i -E \"err|warn\" /opt/splunk/var/log/splunk/SplunkAppForWazuh.log"
     }
   ]
 }

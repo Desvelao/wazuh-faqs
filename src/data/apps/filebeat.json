@@ -57,7 +57,7 @@
   "debug": [
     {
       "label": "Logs - Get errors or warning",
-      "value": "cat /var/log/filebeat/filebeat | grep -i -E \"err|warn\""
+      "value": "grep -i -E \"err|warn\" /var/log/filebeat/filebeat"
     }
   ]
 }

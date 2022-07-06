@@ -18,7 +18,7 @@ function FAQsIndex({ data, location }) {
     const querySearch = params.get("q")
     if(querySearch){
       setSearchTerm(querySearch)
-      params.delete("q");
+      params.delete("q")
       navigate("/faqs", {replace: true})
     }
   },[])
@@ -119,7 +119,7 @@ export default FAQsIndex
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
       edges {
         node {
           frontmatter {

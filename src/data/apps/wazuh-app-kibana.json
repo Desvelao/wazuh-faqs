@@ -44,24 +44,24 @@
         ],
         "rows": [
           {
-            "description": "App data",
+            "description": "Plugin data",
             "value": "<KIBANA_PATH>/data/wazuh"
           },
           {
             "description": "Configuration file",
-            "value": "<APP_DATA>/config/wazuh.yml"
+            "value": "<PLUGIN_DATA>/config/wazuh.yml"
           },
           {
             "description": "Registry file",
-            "value": "<APP_DATA>/config/wazuh-registry.json"
+            "value": "<PLUGIN_DATA>/config/wazuh-registry.json"
           },
           {
             "description": "Logs - plain",
-            "value": "<APP_DATA>/logs/wazuh-plain.log"
+            "value": "<PLUGIN_DATA>/logs/wazuh-plain.log"
           },
           {
             "description": "Logs",
-            "value": "<APP_DATA>/logs/wazuhapp.log"
+            "value": "<PLUGIN_DATA>/logs/wazuhapp.log"
           }
         ]
       }
@@ -83,24 +83,24 @@
         ],
         "rows": [
           {
-            "description": "App data",
+            "description": "Plugin data",
             "value": "<KIBANA_PATH>/optimize/wazuh"
           },
           {
             "description": "Configuration file",
-            "value": "<APP_DATA>/config/wazuh.yml"
+            "value": "<PLUGIN_DATA>/config/wazuh.yml"
           },
           {
             "description": "Registry file",
-            "value": "<APP_DATA>/config/wazuh-registry.json"
+            "value": "<PLUGIN_DATA>/config/wazuh-registry.json"
           },
           {
             "description": "Logs - plain",
-            "value": "<APP_DATA>/logs/wazuh-plain.log"
+            "value": "<PLUGIN_DATA>/logs/wazuh-plain.log"
           },
           {
             "description": "Logs",
-            "value": "<APP_DATA>/logs/wazuhapp.log"
+            "value": "<PLUGIN_DATA>/logs/wazuhapp.log"
           }
         ]
       }
@@ -122,12 +122,12 @@
         ],
         "rows": [
           {
-            "description": "App data",
+            "description": "Plugin data",
             "value": "<KIBANA_PATH>/optimize/wazuh"
           },
           {
             "description": "Configuration file",
-            "value": "<APP_DATA>/config/wazuh.yml"
+            "value": "<PLUGIN_DATA>/config/wazuh.yml"
           },
           {
             "description": "Registry file",
@@ -135,11 +135,11 @@
           },
           {
             "description": "Logs - plain",
-            "value": "<APP_DATA>/logs/wazuh-plain.log"
+            "value": "<PLUGIN_DATA>/logs/wazuh-plain.log"
           },
           {
             "description": "Logs",
-            "value": "<APP_DATA>/logs/wazuhapp.log"
+            "value": "<PLUGIN_DATA>/logs/wazuhapp.log"
           }
         ]
       }
@@ -162,11 +162,11 @@
   "debug": [
     {
       "label": "Logs - get all logs",
-      "value": "cat <APP_DATA>/logs/wazuh-plain.log"
+      "value": "cat <PLUGIN_DATA>/logs/wazuh-plain.log"
     },
     {
       "label": "Logs - filter errors and warnings",
-      "value": "cat <APP_DATA>/logs/wazuh-plain.log | grep -i -E \"err|warn\""
+      "value": "grep -i -E \"err|warn\" <PLUGIN_DATA>/logs/wazuh-plain.log | "
     }
   ]
 }

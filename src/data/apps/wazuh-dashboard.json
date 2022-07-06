@@ -1,8 +1,8 @@
 {
-  "name": "Kibana",
-  "slug": "kibana",
-  "description": "Window into the Elastic Stack. Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.",
-  "documentationLink": "https://www.elastic.co/guide/en/kibana/7.16/index.html",
+  "name": "Wazuh dashboard",
+  "slug": "wazuh-dashboard",
+  "description": "The Wazuh dashboard is a flexible and intuitive web user interface for mining, analyzing, and visualizing security events and alerts data. It is also used for the management and monitoring of the Wazuh platform. Additionally, it provides features for role-based access control (RBAC) and single sign on (SSO).",
+  "documentationLink": "https://documentation.wazuh.com/current/getting-started/components/wazuh-dashboard.html",
   "icon": "",
   "content": [
     {
@@ -22,19 +22,19 @@
         "rows": [
           {
             "description": "Installation folder",
-            "value": "/usr/share/kibana"
+            "value": "/usr/share/wazuh-dashboard"
           },
           {
             "description": "Configuration file (package)",
-            "value": "/etc/kibana/kibana.yml"
+            "value": "/etc/wazuh-dashboard/opensearch_dashboards.yml"
           },
           {
             "description": "Configuration file (zip)",
-            "value": "<KIBANA_HOME>/config/kibana.yml"
+            "value": "<WAZUH_DASHBOARD_HOME>/config/opensearch_dashboards.yml"
           },
           {
             "description": "Logs",
-            "value": "journalctl -u kibana"
+            "value": "journalctl -u wazuh-dashboard"
           },
           {
             "description": "Port",
@@ -42,7 +42,7 @@
           },
           {
             "description": "Service",
-            "value": "kibana"
+            "value": "wazuh-dashboard"
           }
         ]
       }
@@ -51,33 +51,33 @@
   "commands": [
     {
       "label": "Get version",
-      "value": "bin/kibana --version"
+      "value": "bin/openserach-dashboards --version"
     },
     {
       "label": "Plugins - Install by URL",
-      "value": "bin/kibana-plugin install <url>"
+      "value": "bin/openserach-dashboards-plugin install <url>"
     },
     {
       "label": "Plugins - Install local file",
-      "value": "bin/kibana-plugin install file://<absolute_path_to_local_file>"
+      "value": "bin/openserach-dashboards-plugin install file://<absolute_path_to_local_file>"
     },
     {
       "label": "Plugins - Remove",
-      "value": "bin/kibana-plugin remove <plugin_name>"
+      "value": "bin/openserach-dashboards-plugin remove <plugin_name>"
     },
     {
       "label": "Plugins - List",
-      "value": "bin/kibana-plugin list"
+      "value": "bin/openserach-dashboards-plugin list"
     }
   ],
   "debug": [
     {
       "label": "Logs (journalctl) - get all logs",
-      "value": "journalctl -u kibana"
+      "value": "journalctl -u wazuh-dashboard"
     },
     {
       "label": "Logs (journalctl) - get logs filtering by errors or warnings",
-      "value": "journalctl -u kibana | grep -i -E \"err|warn\""
+      "value": "journalctl -u wazuh-dashboard | grep -i -E \"err|warn\""
     }
   ]
 }

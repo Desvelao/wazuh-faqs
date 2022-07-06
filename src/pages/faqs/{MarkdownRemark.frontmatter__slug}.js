@@ -28,7 +28,6 @@ export default function Template({
                 .then((response) => {
                   setFetchRemediationText(response)
                   copyToClipboard(response)
-                  console.log(response)
                 })
             } else {
               copyToClipboard(fetchRemediationText)
