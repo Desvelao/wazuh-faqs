@@ -43,6 +43,7 @@ body {
 .faq code {
   border-radius: 3px;
   background-color: var(--color-faq-code);
+  line-height: 2em;
 }
 
 .tag {

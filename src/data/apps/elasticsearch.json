@@ -29,7 +29,7 @@
             "value": "/etc/elasticsearch/elasticsearch.yml"
           },
           {
-            "description": "Configuration file (zip)",
+            "description": "Configuration file (Docker/zip)",
             "value": "<ELASTICSEARCH_HOME>/config/elasticsearch.yml"
           },
           {
@@ -50,11 +50,15 @@
           },
           {
             "description": "Service",
-            "value": "elasticserach"
+            "value": "elasticsearch"
           },
           {
-            "description": "JVM options file",
+            "description": "JVM options file (package)",
             "value": "/etc/elasticsearch/jvm.options"
+          },
+          {
+            "description": "JVM options file (Docker/zip)",
+            "value": "<ELASTICSEARCH_HOME>/config/jvm.options"
           }
         ]
       }
