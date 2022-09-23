@@ -1,5 +1,5 @@
 ---
-slug: "enable_audit_logs"
+slug: "enable-audit-logs"
 date: "2022-09-23"
 title: "Enable audit logs"
 description: "Enable the audit logs"
