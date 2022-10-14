@@ -4,7 +4,7 @@
   "description": "Wazuh is a free and open source platform for threat detection, security monitoring, incident response and regulatory compliance. It can be used to monitor endpoints, cloud services and containers, and to aggregate and analyze data from external sources.",
   "documentationLink": "https://documentation.wazuh.com/current/",
   "icon": "",
-  "content": [
+  "info": [
     {
       "type": "table",
       "contentTable": {
@@ -124,7 +124,9 @@
           }
         ]
       }
-    },
+    }
+  ],
+  "backup": [
     {
       "type": "table",
       "title": "Backup folders/files",

@@ -4,7 +4,7 @@
   "description": "Window into the Elastic Stack. Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.",
   "documentationLink": "https://www.elastic.co/guide/en/kibana/7.16/index.html",
   "icon": "",
-  "content": [
+  "info": [
     {
       "type": "table",
       "contentTable": {
@@ -44,6 +44,44 @@
             "description": "Service",
             "value": "kibana"
           }
+        ]
+      }
+    }
+    
+  ],
+  "backup": [
+    {
+      "type": "table",
+      "title": "Backup folders/files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "File",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Package - Configuration",
+            "value": "/etc/kibana"
+          },
+          {
+            "description": "Package - Certificates - Wazuh installation guide",
+            "value": "/etc/kibana/certs"
+          },
+          {
+            "description": "Docker - Configuration",
+            "value": "/usr/share/kibana/config"
+          },
+          {
+            "description": "Certificates",
+            "value": "All certificates files"
+          }         
         ]
       }
     }

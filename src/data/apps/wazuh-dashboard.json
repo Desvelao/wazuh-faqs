@@ -4,7 +4,7 @@
   "description": "The Wazuh dashboard is a flexible and intuitive web user interface for mining, analyzing, and visualizing security events and alerts data. It is also used for the management and monitoring of the Wazuh platform. Additionally, it provides features for role-based access control (RBAC) and single sign on (SSO).",
   "documentationLink": "https://documentation.wazuh.com/current/getting-started/components/wazuh-dashboard.html",
   "icon": "",
-  "content": [
+  "info": [
     {
       "type": "table",
       "contentTable": {
@@ -44,6 +44,43 @@
             "description": "Service",
             "value": "wazuh-dashboard"
           }
+        ]
+      }
+    }
+  ],
+  "backup": [
+    {
+      "type": "table",
+      "title": "Backup folders/files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "File",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Package - Configuration",
+            "value": "/etc/wazuh-dashboard"
+          },
+          {
+            "description": "Package - Certificates - Wazuh installation guide",
+            "value": "/etc/wazuh-dashboard/certs"
+          },
+          {
+            "description": "Docker - Configuration",
+            "value": "/usr/share/wazuh-dashboard/config"
+          },
+          {
+            "description": "Certificates",
+            "value": "All certificates files"
+          }      
         ]
       }
     }

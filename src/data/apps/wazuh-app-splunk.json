@@ -4,7 +4,7 @@
   "description": "Navigate through the Wazuh data using visualizations in a simple and understandable way. It also allows you to manage the configuration and capabilities of the Wazuh server.",
   "documentationLink": "https://github.com/wazuh/wazuh-splunk",
   "icon": "",
-  "content": [
+  "info": [
     {
       "type": "table",
       "contentTable": {
@@ -28,6 +28,7 @@
       }
     }
   ],
+  "backup": [],
   "commands": [],
   "debug": [
     {

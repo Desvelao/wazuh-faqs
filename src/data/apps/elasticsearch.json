@@ -4,7 +4,7 @@
   "description": "Search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents",
   "documentationLink": "https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html",
   "icon": "",
-  "content": [
+  "info": [
     {
       "type": "table",
       "contentTable": {
@@ -84,10 +84,59 @@
           "value": "GET /_cat/indices/<INDEX_PATTERN>"
         },
         {
-          "label": "Template - Indices (using index pattern)",
+          "label": "Cat - Templates",
+          "value": "GET /_cat/templates"
+        },
+        {
+          "label": "Template - (using template name)",
           "value": "GET /_template/<TEMPLATE_NAME>"
         }
       ]
+    }
+  ],
+  "backup": [
+    {
+      "type": "table",
+      "title": "Backup folders/files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "File",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Package - Configuration",
+            "value": "/etc/elasticsearch"
+          },
+          {
+            "description": "Package - Certificates - Wazuh installation guide",
+            "value": "/etc/elasticsearch/certs"
+          },
+          {
+            "description": "Docker - Configuration",
+            "value": "/usr/share/elasticsearch/config"
+          },
+          {
+            "description": "Certificates",
+            "value": "All certificates files"
+          },
+          {
+            "description": "Alternative - Configuration",
+            "value": "$ES_PATH_CONF directory"
+          },
+          {
+            "description": "OpenDistro for Elasticsearch - Initial configuration",
+            "value": "/usr/share/elasticsearch/plugins/opendistro_security/securityconfig"
+          }
+        ]
+      }
     }
   ],
   "commands": [

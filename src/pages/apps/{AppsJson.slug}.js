@@ -7,8 +7,9 @@ export default function TemplateDataComponent({
     allAppsJson: { nodes },
   },
 }) {
-  const [{ content, commands, debug, name, description, documentationLink }] =
+  const [{ backup, info, commands, debug, name, description, documentationLink }] =
     nodes
+  console.log({nodes})
 
   return (
     <Layout>
@@ -32,8 +33,43 @@ export default function TemplateDataComponent({
               label: "Info",
               render: () => (
                 <>
-                  {content &&
-                    content.map((element, index) => (
+                  {info &&
+                    info.map((element, index) => (
+                      <div>
+                        {element.title && (
+                          <>
+                            <div>{element.title}</div>
+                            <Spacer />
+                          </>
+                        )}
+                        {element.type === "table" && element.contentTable && (
+                          <>
+                            <Table {...element.contentTable} />
+                            <Spacer />
+                          </>
+                        )}
+                        {element.type === "commands" &&
+                          element.contentCommands &&
+                          element.contentCommands.map((command) => (
+                            <>
+                              <Command {...command} copyable={true}>
+                                {command.value}
+                              </Command>
+                              <Spacer />
+                            </>
+                          ))}
+                      </div>
+                    ))}
+                </>
+              ),
+            },
+            {
+              id: "backup",
+              label: "Backup",
+              render: () => (
+                <>
+                  {backup &&
+                    backup.map((element, index) => (
                       <div>
                         {element.title && (
                           <>
@@ -106,11 +142,26 @@ export const query = graphql`
     allAppsJson(filter: { slug: { eq: $slug } }) {
       nodes {
         name
-        content {
+        info {
           contentCommands {
             label
             value
           }
+          contentTable {
+            columns {
+              copyable
+              id
+              label
+            }
+            rows {
+              description
+              value
+            }
+          }
+          title
+          type
+        }
+        backup {
           contentTable {
             columns {
               copyable
