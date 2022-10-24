@@ -191,12 +191,16 @@
   ],
   "debug": [
     {
-      "label": "Logs - get all logs",
+      "label": "Manager logs - get all logs",
       "value": "cat /var/ossec/logs/ossec.log"
     },
     {
-      "label": "Logs - filter errors and warnings",
+      "label": "Manager logs - filter errors and warnings",
       "value": "grep -i -E \"err|warn\" /var/ossec/logs/ossec.log"
+    },
+    {
+      "label": "API logs - get all logs",
+      "value": "cat /var/ossec/logs/api.log"
     }
   ]
 }
