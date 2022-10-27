@@ -98,7 +98,7 @@ function FAQsIndex({ data, location }) {
                       className="mb-4 ml-4 mr-4"
                       title={frontmatter.title}
                       description={frontmatter.description}
-                      tags={frontmatter.tags.split(",").map((tag) => (
+                      tags={frontmatter.tags.split(",").sort().map((tag) => (
                         <Tag key={tag}>{tag}</Tag>
                       ))}
                       onClick={() => {
