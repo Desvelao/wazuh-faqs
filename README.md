@@ -4,7 +4,13 @@
 
 ## Description
 
-This repository contains information about how to solve some frequently asked questions related to Wazuh and its environment (Kibana, Elasticsearch, Filebeat, X-Pack, Open Distro for Elasticsearch). This is exposed in a [static web](https://desvelao.github.io/wazuh-faqs/) created with [GatsbyJS](https://www.gatsbyjs.com/).
+This repository contains information about how to solve some frequently asked questions related to Wazuh and its environment (Kibana, Elasticsearch, Filebeat, X-Pack, Open Distro for Elasticsearch, Wazuh dashboard and Wazuh indexer). This is exposed in a [static web](https://desvelao.github.io/wazuh-faqs/) created with [GatsbyJS](https://www.gatsbyjs.com/).
+
+### Personal objectives
+
+My personal objectives building this project are:
+- play with GatsbyJS
+- build CSS styles from scratch
 
 ## 🚀 Quick start
 
@@ -48,11 +54,6 @@ Edit the files to see your site update in real-time!
 
 ### Develop with Docker
 
-- Downlaod the docker image
-```
-docker pull node:14.15-alpine3.13
-```
-
 - Create a container to install dependencies
 ```
 docker run -itd --rm -w "/home/node/app" -v "$(pwd):/home/node/app" node:14.15-alpine3.13 npm install
@@ -60,7 +61,7 @@ docker run -itd --rm -w "/home/node/app" -v "$(pwd):/home/node/app" node:14.15-a
 
 - Create a container to develop
 ```
-docker run -itd --rm --name wazuh-faqs -w "/home/node/app" -v "$(pwd):/home/node/app" -p "8000:8000" node:14.15-alpine3.13 sh -c "npm install -g gatsby-cli && gatsby develop -H \"0.0.0.0\""
+docker run -itd --rm --name wazuh-faqs -w "/home/node/app" -v "$(pwd):/home/node/app" -p "8000:8000" node:14.15-alpine3.13 sh -c "npm install -g gatsby-cli@3.9.0 && gatsby develop -H \"0.0.0.0\""
 ```
 
 3.  **Learn more**
@@ -79,4 +80,6 @@ docker run -itd --rm --name wazuh-faqs -w "/home/node/app" -v "$(pwd):/home/node
 
 ## Guides
 
-    TODO
+### Styles customization
+
+Some styles can be changed through a centralized file where you can change some properties of components.

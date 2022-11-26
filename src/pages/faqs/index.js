@@ -1,10 +1,11 @@
 import React, { useEffect } from "react"
 import { graphql, navigate } from "gatsby"
 import { useState } from "react"
-import { Card, LabelCheckbox, Tag, Layout } from "../../components"
+import { Callout, Card, Copyable, LabelCheckbox, Tag, Layout } from "../../components"
 
 function FAQsIndex({ data, location }) {
   const { allMarkdownRemark } = data
+  console.log('HELLO',{data, location});
   const [searchTerm, setSearchTerm] = useState("")
   const [filterTags, setFilterTags] = useState([])
   const onChangeSelectTag = (e) => {
@@ -24,6 +25,13 @@ function FAQsIndex({ data, location }) {
   },[])
   return (
     <Layout>
+      <div className="mb-8">
+        <Callout type="info">
+          <strong>Tip:</strong> you can search in these faqs through a browser search engine. Add it to your browser: <Copyable copy={`${location.href}?q=%s`}>
+            <code>{location.href}?q=%s</code>
+          </Copyable>.
+        </Callout>
+      </div>
       <div className="mb-8">
         <div className="d-flex">
           <div
@@ -130,6 +138,12 @@ export const query = graphql`
             tags
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
+        siteUrl
       }
     }
   }

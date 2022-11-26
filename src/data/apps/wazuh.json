@@ -196,7 +196,7 @@
     },
     {
       "label": "Manager logs - filter errors and warnings",
-      "value": "grep -i -E \"err|warn\" /var/ossec/logs/ossec.log"
+      "value": "grep -iE \"err|warn\" /var/ossec/logs/ossec.log"
     },
     {
       "label": "API logs - get all logs",

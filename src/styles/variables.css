@@ -18,4 +18,18 @@
   --tooltip-background-color: black;
   --tooltip-margin: 30px;
   --tooltip-arrow-size: 6px;
+  --callout-info-backgorund-color: #2274a5;
+  --callout-info-border-color: blue;
+  --callout-info-color: white;
+  --callout-warning-backgorund-color: yellow;
+  --callout-warning-border-color: blue;
+  --callout-warning-color: white;
+  --callout-danger-backgorund-color: red;
+  --callout-danger-border-color: blue;
+  --callout-danger-color: white;
+  --callout-border-size: 0.2em;
+  --callout-border-type: solid;
+  --callout-padding: 0.5em;
+  --callout-font-size: 0.8rem;
+  --callout-filter: brightness(0.9);
 }

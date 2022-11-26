@@ -167,7 +167,7 @@
     },
     {
       "label": "Logs - filter errors and warnings",
-      "value": "grep -i -E \"err|warn\" <PLUGIN_DATA>/logs/wazuh-plain.log | "
+      "value": "grep -iE \"err|warn\" <PLUGIN_DATA>/logs/wazuh-plain.log | "
     }
   ]
 }

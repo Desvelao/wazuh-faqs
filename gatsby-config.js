@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    author: "Desvelao",
+    siteUrl: "https://desvelao.github.io/wazuh-faqs",
     title: "Wazuh - FAQs",
   },
   plugins: [

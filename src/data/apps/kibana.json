@@ -115,7 +115,7 @@
     },
     {
       "label": "Logs (journalctl) - get logs filtering by errors or warnings",
-      "value": "journalctl -u kibana | grep -i -E \"err|warn\""
+      "value": "journalctl -u kibana | grep -iE \"err|warn\""
     }
   ]
 }

@@ -147,7 +147,7 @@
   "debug": [
     {
       "label": "Logs - get logs filtering by errors or warnings",
-      "value": "grep -i -E \"err|warn\" /var/log/wazuh-indexer/<CLUSTER_NAME>.log"
+      "value": "grep -iE \"err|warn\" /var/log/wazuh-indexer/<CLUSTER_NAME>.log"
     }
   ]
 }

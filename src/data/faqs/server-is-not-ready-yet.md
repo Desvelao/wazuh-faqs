@@ -31,7 +31,7 @@ Check the logs of your platform:
   - Filtering by errors or warnings
 
     ```
-    journalctl -u kibana | grep -i -E "err|warn"
+    journalctl -u kibana | grep -iE "err|warn"
     ```
 
 
@@ -47,5 +47,5 @@ Check the logs of your platform:
   - Filtering by errors or warnings
 
     ```
-    journalctl -u wazuh-dashboard | grep -i -E "err|warn"
+    journalctl -u wazuh-dashboard | grep -iE "err|warn"
     ```

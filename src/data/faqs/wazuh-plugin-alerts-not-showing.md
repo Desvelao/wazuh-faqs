@@ -36,17 +36,17 @@ filebeat test output
 
 - Filebeat logs filtering by errors or warnings
 ```
-grep -i -E "err|warn" /var/log/filebeat/filebeat
+grep -iE "err|warn" /var/log/filebeat/filebeat
 ```
 
 - Wazuh indexer logs filtering by errors or warnings
 ```
-grep -i -E "err|warn" /var/log/wazuh-indexer/<CLUSTER_NAME>.log
+grep -iE "err|warn" /var/log/wazuh-indexer/<CLUSTER_NAME>.log
 ```
 
 - Elasticsearch logs filtering by errors or warnings
 ```
-grep -i -E "err|warn" /var/log/elasticsearch/<CLUSTER_NAME>.log
+grep -iE "err|warn" /var/log/elasticsearch/<CLUSTER_NAME>.log
 ```
 
 - Wazuh dashboard/Kibana is connected to the Wazuh inxder/Elasticsearch that have the alerts indexed

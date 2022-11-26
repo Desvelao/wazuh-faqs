@@ -37,7 +37,7 @@
     },
     {
       "label": "Logs - filter errors and warnings",
-      "value": "grep -i -E \"err|warn\" /opt/splunk/var/log/splunk/SplunkAppForWazuh.log"
+      "value": "grep -iE \"err|warn\" /opt/splunk/var/log/splunk/SplunkAppForWazuh.log"
     }
   ]
 }

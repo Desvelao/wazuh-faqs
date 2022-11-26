@@ -1,4 +1,5 @@
 export * from "./button/button"
+export * from "./callout/callout"
 export * from "./card/card"
 export * from "./command/command"
 export * from "./copyable/copyable"

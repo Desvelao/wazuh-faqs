@@ -186,7 +186,12 @@ const IndexPage = () => {
 export default function HomePage() {
   return (
     <Layout>
-      <div>Home</div>
+      <div>
+        <p>
+          Hello!
+        </p>
+        <p>This is a resource that stores some solutions to errors and information about the applications used in the deployment of <a href="https://wazuh.com/">Wazuh</a>.</p>
+      </div>
     </Layout>
   )
 }
