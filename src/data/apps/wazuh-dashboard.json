@@ -33,6 +33,14 @@
             "value": "<WAZUH_DASHBOARD_HOME>/config/opensearch_dashboards.yml"
           },
           {
+            "description": "Keystore (package)",
+            "value": "/etc/wazuh-dashboard/opensearch_dashboards.keystore"
+          },
+          {
+            "description": "Keystore (zip)",
+            "value": "<WAZUH_DASHBOARD_HOME>/config/opensearch_dashboards.keystore"
+          },          
+          {
             "description": "Logs",
             "value": "journalctl -u wazuh-dashboard"
           },
@@ -105,6 +113,18 @@
     {
       "label": "Plugins - List",
       "value": "bin/openserach-dashboards-plugin list"
+    },
+    {
+      "label": "Keystore - List",
+      "value": "bin/openserach-dashboards-keystore list"
+    },
+    {
+      "label": "Keystore - Add",
+      "value": "bin/openserach-dashboards-keystore add <setting>"
+    },
+    {
+      "label": "Keystore - Remove",
+      "value": "bin/openserach-dashboards-keystore remove <setting>"
     }
   ],
   "debug": [

@@ -1,0 +1,23 @@
+.callout{
+    padding: var(--callout-padding);
+    font-size: var(--callout-font-size);
+    filter: var(--callout-filter);
+}
+
+.callout-info{
+    background-color: var(--callout-info-backgorund-color);
+    border-left: var(--callout-border-size) var(--callout-border-type) var(--callout-info-border-color);
+    color: var(--callout-info-color);
+}
+
+.callout-warning{
+    background-color: var(--callout-warning-backgorund-color);
+    border-left: var(--callout-border-size) var(--callout-border-type) var(--callout-warning-border-color);
+    color: var(--callout-warning-color);
+}
+
+.callout-danger{
+    background-color: var(--callout-danger-backgorund-color);
+    border-left: var(--callout-border-size) var(--callout-border-type) var(--callout-danger-border-color);
+    color: var(--callout-danger-color);
+}

@@ -33,6 +33,14 @@
             "value": "<KIBANA_HOME>/config/kibana.yml"
           },
           {
+            "description": "Keystore (package)",
+            "value": "/etc/wazuh-dashboard/kibana.keystore"
+          },
+          {
+            "description": "Keystore (zip)",
+            "value": "<WAZUH_DASHBOARD_HOME>/config/kibana.keystore"
+          },
+          {
             "description": "Logs",
             "value": "journalctl -u kibana"
           },
@@ -106,6 +114,18 @@
     {
       "label": "Plugins - List",
       "value": "bin/kibana-plugin list"
+    },
+    {
+      "label": "Keystore - List",
+      "value": "bin/kibana-keystore list"
+    },
+    {
+      "label": "Keystore - Add",
+      "value": "bin/kibana-keystore add <setting>"
+    },
+    {
+      "label": "Keystore - Remove",
+      "value": "bin/kibana-keystore remove <setting>"
     }
   ],
   "debug": [
