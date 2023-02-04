@@ -14,6 +14,19 @@ export const copyToClipboard = (str) => {
   document.body.removeChild(el)
 }
 
+export function downloadAsFile(text, type, filename){
+  const a = document.createElement("a");
+  try{
+      a.href = window.URL.createObjectURL(new Blob([text], {type}));
+      a.download = filename;
+      a.click();
+  }catch(error){
+      console.error(error)
+  }finally{
+      a.remove();
+  }
+}
+
 export const classNames = (names) =>
   Object.entries(names)
     .filter(([key, value]) => {

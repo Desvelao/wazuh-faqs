@@ -1,45 +1,97 @@
-.m-4 {
+.m-xs {
   margin: 4px;
 }
 
-.m-8 {
+.m-s {
   margin: 8px;
 }
 
-.mb-4 {
-  margin-bottom: 4px;
+.m-m {
+  margin: 4px;
 }
 
-.mb-8 {
-  margin-bottom: 8px;
+.m-l {
+  margin: 8px;
 }
 
-.mt-4 {
+.my-xs, .mt-xs {
   margin-top: 4px;
 }
 
-.mt-8 {
-  margin-top: 8px;
+.my-xs, .mb-xs {
+  margin-bottom: 4px;
 }
 
-.ml-4 {
+.mx-xs, .ml-xs {
   margin-left: 4px;
 }
 
-.ml-8 {
-  margin-left: 8px;
-}
-
-.mr-4 {
+.mx-xs, .mr-xs {
   margin-right: 4px;
 }
 
-.mr-8 {
+.my-s, .mt-s {
+  margin-top: 8px;
+}
+
+.my-s, .mb-s {
+  margin-bottom: 8px;
+}
+
+.mx-s, .ml-s {
+  margin-left: 8px;
+}
+
+.mx-s, .mr-s {
   margin-right: 8px;
+}
+
+.my-m, .mt-m {
+  margin-top: 12px;
+}
+
+.my-m, .mb-m {
+  margin-bottom: 12px;
+}
+
+.mx-m, .ml-m {
+  margin-left: 12px;
+}
+
+.mx-m, .mr-m {
+  margin-right: 12px;
+}
+
+.my-l, .mt-l {
+  margin-top: 16px;
+}
+
+.my-l, .mb-l {
+  margin-bottom: 16px;
+}
+
+.mx-l, .ml-l {
+  margin-left: 16px;
+}
+
+.mx-l, .mr-l {
+  margin-right: 16px;
+}
+
+.d-block {
+  display: block;
 }
 
 .d-flex {
   display: flex;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
 }
 
 .background-color-disabled {

@@ -7,13 +7,12 @@ export default function Apps(props) {
 
   return (
     <Layout>
-      <div className="d-flex mb-4" style={{ flexWrap: "wrap" }}>
+      <div className="d-flex mb-s" style={{ flexWrap: "wrap", gap: "10px" }}>
         {nodes.map((node) => (
           <div style={{ flexBasis: "33.33%", width: "100%" }} key={node.name}>
             <Card
               title={node.name}
               description={node.description}
-              className="mb-4 ml-4 mr-4"
               onClick={() => {
                 navigate(node.slug)
               }}

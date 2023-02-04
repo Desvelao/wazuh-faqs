@@ -15,3 +15,12 @@
   background-color: var(--color-primary);
   color: var(--color-primary-contrast);
 }
+
+.table thead {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.table thead td{
+  padding: 12px 8px;
+}

@@ -3,6 +3,7 @@
   --color-primary-contrast: white;
   --color-primary-shadow: #131b23;
   --color-secondary: #e7dfc6;
+  --color-secondary-contrast: #2274a5;
   --color-success: yellow;
   --color-warning: yellow;
   --color-error: yellow;
@@ -32,4 +33,8 @@
   --callout-padding: 0.5em;
   --callout-font-size: 0.8rem;
   --callout-filter: brightness(0.9);
+  --card-test-ui-background-color: var(--color-primary);
+  --card-test-ui-color: var(--color-primary-contrast);
+  --card-test-backend-background-color: var(--color-secondary);
+  --card-test-backend-color: var(--color-secondary-contrast);
 }

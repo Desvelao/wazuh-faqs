@@ -1,17 +1,15 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { graphql, navigate } from "gatsby"
-import { useState } from "react"
 import { Callout, Card, Copyable, LabelCheckbox, Tag, Layout } from "../../components"
 
 function FAQsIndex({ data, location }) {
   const { allMarkdownRemark } = data
-  console.log('HELLO',{data, location});
   const [searchTerm, setSearchTerm] = useState("")
   const [filterTags, setFilterTags] = useState([])
-  const onChangeSelectTag = (e) => {
+  const onChangeSelectTag = (event) => {
     setFilterTags([
-      ...filterTags.filter((tag) => tag !== e.target.value),
-      ...(e.target.checked ? [e.target.value] : []),
+      ...filterTags.filter((tag) => tag !== event.target.value),
+      ...(event.target.checked ? [event.target.value] : []),
     ])
   };
   useEffect(() => {
@@ -25,22 +23,22 @@ function FAQsIndex({ data, location }) {
   },[])
   return (
     <Layout>
-      <div className="mb-8">
+      <div className="mb-s">
         <Callout type="info">
           <strong>Tip:</strong> you can search in these faqs through a browser search engine. Add it to your browser: <Copyable copy={`${location.href}?q=%s`}>
             <code>{location.href}?q=%s</code>
           </Copyable>.
         </Callout>
       </div>
-      <div className="mb-8">
+      <div className="mb-s">
         <div className="d-flex">
           <div
-            className="mb-4 ml-4 mr-4"
+            className="mb-s mx-s"
             style={{ minWidth: "15%", flexBasis: "15%" }}
           >
-            <div className="mb-8">
+            <div className="mb-s">
               <input
-                className="input mb-8 mr-8"
+                className="input mb-s mr-s"
                 placeholder="Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -53,7 +51,7 @@ function FAQsIndex({ data, location }) {
                 ✖
               </span>
             </div>
-            <div className="mb-8 t-center">Filter by tags</div>
+            <div className="mb-s t-center">Filter by tags</div>
             <div className="d-flex" style={{ flexWrap: "wrap" }}>
               {allMarkdownRemark.edges
                 .map(
@@ -67,14 +65,14 @@ function FAQsIndex({ data, location }) {
                 .filter((value, index, array) => array.indexOf(value) === index)
                 .sort()
                 .map((tag) => (
-                  <div className="mr-4 mb-8 ml-4" key={tag}>
+                  <div className="mr-s mb-s ml-s" key={tag}>
                     <LabelCheckbox label={tag} onChange={onChangeSelectTag} />
                   </div>
                 ))}
             </div>
           </div>
-          <div className="ml-4 mr-4">
-            <div className="d-flex mb-4" style={{ flexWrap: "wrap" }}>
+          <div className="mx-s">
+            <div className="d-flex mb-s" style={{ flexWrap: "wrap" }}>
               {allMarkdownRemark.edges
                 .filter(
                   ({
@@ -103,7 +101,7 @@ function FAQsIndex({ data, location }) {
                     key={frontmatter.slug}
                   >
                     <Card
-                      className="mb-4 ml-4 mr-4"
+                      className="mb-s mx-s"
                       title={frontmatter.title}
                       description={frontmatter.description}
                       tags={frontmatter.tags.split(",").sort().map((tag) => (

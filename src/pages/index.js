@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Layout } from "../components"
 import "../styles/utility.css"
+import "../styles/base.css"
 
 // styles
 const pageStyles = {

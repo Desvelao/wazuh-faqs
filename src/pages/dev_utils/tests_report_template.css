@@ -1,0 +1,9 @@
+.card-test-ui{
+    background-color: var(--card-test-ui-background-color);
+    color: var(--card-test-ui-color);
+}
+
+.card-test-backend{
+    background-color: var(--card-test-backend-background-color);
+    color: var(--card-test-backend-color);
+}

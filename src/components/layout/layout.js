@@ -15,6 +15,10 @@ const menuLinks = [
     link: "/apps",
     label: "Apps",
   },
+  // {
+  //   link: "/dev_utils",
+  //   label: "Dev utils",
+  // }
 ]
 
 export function Layout({ children }) {
