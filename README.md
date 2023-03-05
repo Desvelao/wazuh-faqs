@@ -4,12 +4,29 @@
 
 ## Description
 
-This repository contains information about how to solve some frequently asked questions related to Wazuh and its environment (Kibana, Elasticsearch, Filebeat, X-Pack, Open Distro for Elasticsearch, Wazuh dashboard and Wazuh indexer). This is exposed in a [static web](https://desvelao.github.io/wazuh-faqs/) created with [GatsbyJS](https://www.gatsbyjs.com/).
+This repository is a personal compilation of data related to development, debugging and solving some frequently problems (communities) related to [Wazuh](https://wazuh.com/).
 
-### Personal objectives
+The objectives are:
+- Summary the local notes
+- Expose the notes to be used by other work colleagues. This reduces my inverted time to reply to some questions of work colleagues and provide another source of information.
+- Friendly usage to work colleagues (make easy copy-pasting the data). 
+
+It contains data about:
+- apps (Kibana, Elasticsearch, Filebeat, X-Pack, Open Distro for Elasticsearch, Wazuh dashboard and Wazuh indexer).
+- faqs: some frequently asked questions.
+- tools:
+  - generator of templates for manual tests (used for pull requests or releases)
+
+This is exposed in a [static web](https://desvelao.github.io/wazuh-faqs/) created with [GatsbyJS](https://www.gatsbyjs.com/).
+
+To get more information about Wazuh, visit its webpage https://wazuh.com/.
+
+Wazuh documentation: https://documentation.wazuh.com/current/index.html.
+
+### Project and personal objectives
 
 My personal objectives building this project are:
-- play with GatsbyJS
+- learn and play with GatsbyJS
 - build CSS styles from scratch
 
 ## 🚀 Quick start

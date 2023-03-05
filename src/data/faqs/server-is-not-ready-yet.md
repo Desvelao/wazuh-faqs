@@ -2,6 +2,7 @@
 slug: "server-is-not-ready-yet"
 date: "2020-07-06"
 title: "Server is not ready yet"
+author: ""
 description: ""
 tags: "kibana,wazuh-dashboard"
 version: ""

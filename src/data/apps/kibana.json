@@ -96,39 +96,63 @@
   ],
   "commands": [
     {
+      "label": "Service start - systemctl",
+      "value": "systemctl start kibana"
+    },
+    {
+      "label": "Service start - service",
+      "value": "service kibana start"
+    },
+    {
+      "label": "Service stop - systemctl",
+      "value": "systemctl stop kibana"
+    },
+    {
+      "label": "Service stop - service",
+      "value": "service kibana stop"
+    },
+    {
       "label": "Get version",
-      "value": "bin/kibana --version"
+      "value": "<KIBANA_PATH>/bin/kibana --version"
     },
     {
       "label": "Plugins - Install by URL",
-      "value": "bin/kibana-plugin install <url>"
+      "value": "<KIBANA_PATH>/bin/kibana-plugin install <url>"
     },
     {
       "label": "Plugins - Install local file",
-      "value": "bin/kibana-plugin install file://<absolute_path_to_local_file>"
+      "value": "<KIBANA_PATH>/bin/kibana-plugin install file://<absolute_path_to_local_file>"
     },
     {
       "label": "Plugins - Remove",
-      "value": "bin/kibana-plugin remove <plugin_name>"
+      "value": "<KIBANA_PATH>/bin/kibana-plugin remove <plugin_name>"
     },
     {
       "label": "Plugins - List",
-      "value": "bin/kibana-plugin list"
+      "value": "<KIBANA_PATH>/bin/kibana-plugin list"
     },
     {
       "label": "Keystore - List",
-      "value": "bin/kibana-keystore list"
+      "value": "<KIBANA_PATH>/bin/kibana-keystore list"
     },
     {
       "label": "Keystore - Add",
-      "value": "bin/kibana-keystore add <setting>"
+      "value": "<KIBANA_PATH>/bin/kibana-keystore add <setting>"
     },
     {
       "label": "Keystore - Remove",
-      "value": "bin/kibana-keystore remove <setting>"
+      "value": "<KIBANA_PATH>/bin/kibana-keystore remove <setting>"
     }
   ],
   "debug": [
+    {
+      "label": "Service status - systemctl",
+      "value": "systemctl status kibana"
+    },
+    {
+      "label": "Service status - service",
+      "value": "service kibana status"
+    },
     {
       "label": "Logs (journalctl) - get all logs",
       "value": "journalctl -u kibana"

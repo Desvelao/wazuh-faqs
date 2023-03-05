@@ -177,6 +177,30 @@
   ],
   "commands": [
     {
+      "label": "Service start - systemctl",
+      "value": "systemctl start wazuh"
+    },
+    {
+      "label": "Service start - service",
+      "value": "service wazuh start"
+    },
+    {
+      "label": "Service start - wazuh-control binary",
+      "value": "<WAZUH_PATH>/bin/wazuh-control start"
+    },
+    {
+      "label": "Service stop - systemctl",
+      "value": "systemctl stop wazuh"
+    },
+    {
+      "label": "Service stop - service",
+      "value": "service wazuh stop"
+    },
+    {
+      "label": "Service stop - wazuh-control binary",
+      "value": "<WAZUH_PATH>/bin/wazuh-control stop"
+    },
+    {
       "label": "Get version",
       "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
     },
@@ -187,9 +211,17 @@
     {
       "label": "Get info",
       "value": "/var/ossec/info/wazuh-control info"
-    }
+    }    
   ],
   "debug": [
+    {
+      "label": "Service status - systemctl",
+      "value": "systemctl status wazuh"
+    },
+    {
+      "label": "Service status - service",
+      "value": "service wazuh start"
+    },
     {
       "label": "Manager logs - get all logs",
       "value": "cat /var/ossec/logs/ossec.log"

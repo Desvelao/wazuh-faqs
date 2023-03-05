@@ -38,12 +38,14 @@ body {
 
 .faq {
   padding: 0 15%;
+  max-width: 100%;
 }
 
 .faq code {
   border-radius: 3px;
   background-color: var(--color-faq-code);
   line-height: 2em;
+  white-space: break-spaces;
 }
 
 .tag {

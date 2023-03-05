@@ -2,6 +2,7 @@
 slug: "logs-rotation"
 date: "2022-11-22"
 title: "Logs retention"
+author: ""
 description: "Set the rotation for the log files"
 tags: "disk-usage,logs,rotation"
 version: ""

@@ -16,8 +16,31 @@ export default function Template({
     <Layout>
       <div className="markdown faq">
         <h1 style={{ display: "inline" }}>{frontmatter.title}</h1>
-        {frontmatter.version && <Tag>Version: {frontmatter.version}</Tag>}
-        <Button
+        <div className="mb-s" style={{position: "fixed", bottom: "10px", right: "10px"}}>
+            <div>
+              <Button
+                onClick={() => {
+                  if (!fetchRemediationText) {
+                    const fileUrl = `https://raw.githubusercontent.com/Desvelao/wazuh-faqs/main/src/data/faqs/${frontmatter.slug}.md`
+                    console.log(`Fetching file: ${fileUrl}`)
+                    fetch(fileUrl)
+                      .then((response) => response.text())
+                      .then((response) => getFAQRemediationFromMarkdown(response))
+                      .then((response) => {
+                        setFetchRemediationText(response)
+                        copyToClipboard(response)
+                      })
+                      .catch(console.error)
+                  } else {
+                    copyToClipboard(fetchRemediationText)
+                  }
+                }}
+              >
+                Copy remediation (in Markdown)
+              </Button>
+            </div>
+        </div>
+        {/* <Button
           onClick={() => {
             if (!fetchRemediationText) {
               const fileUrl = `https://raw.githubusercontent.com/Desvelao/wazuh-faqs/main/src/data/faqs/${frontmatter.slug}.md`
@@ -29,13 +52,26 @@ export default function Template({
                   setFetchRemediationText(response)
                   copyToClipboard(response)
                 })
+                .catch(console.error)
             } else {
               copyToClipboard(fetchRemediationText)
             }
           }}
         >
-          Copy Remediation
-        </Button>
+          Copy remediation (in Markdown)
+        </Button> */}
+        {frontmatter.version && (
+          <div>
+            <Tag>Version: {frontmatter.version}</Tag>
+            <Spacer />
+          </div>
+        )}
+        {frontmatter.author && (
+          <div>
+            <Tag>by: {frontmatter.author}</Tag>
+            <Spacer />
+          </div>
+        )}
         {frontmatter.tags && (
           <div>
             {frontmatter.tags
@@ -77,6 +113,7 @@ export const pageQuery = graphql`
         tags
         version
         description
+        author
       }
     }
   }

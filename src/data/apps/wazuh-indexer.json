@@ -136,15 +136,39 @@
   ],
   "commands": [
     {
+      "label": "Service start - systemctl",
+      "value": "systemctl start wazuh-indexer"
+    },
+    {
+      "label": "Service start - service",
+      "value": "service wazuh-indexer start"
+    },
+    {
+      "label": "Service stop - systemctl",
+      "value": "systemctl stop wazuh-indexer"
+    },
+    {
+      "label": "Service stop - service",
+      "value": "service wazuh-indexer stop"
+    },
+    {
       "label": "Get version",
-      "value": "bin/opensearch --version"
+      "value": "<WAZUH_INDEXER_PATH>/bin/opensearch --version"
     },
     {
       "label": "Plugins - List",
-      "value": "bin/opensearch-plugin list"
-    }
+      "value": "<WAZUH_INDEXER_PATH>/bin/opensearch-plugin list"
+    }    
   ],
   "debug": [
+    {
+      "label": "Service status - systemctl",
+      "value": "systemctl status wazuh-indexer"
+    },
+    {
+      "label": "Service status - service",
+      "value": "service wazuh-indexer status"
+    },
     {
       "label": "Logs - get logs filtering by errors or warnings",
       "value": "grep -iE \"err|warn\" /var/log/wazuh-indexer/<CLUSTER_NAME>.log"

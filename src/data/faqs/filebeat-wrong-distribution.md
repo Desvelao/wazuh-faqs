@@ -2,6 +2,7 @@
 slug: "filebeat-wrong-distribution"
 date: "2020-06-21"
 title: "Filebeat requires the default distribution"
+author: ""
 description: "Give to the Kibana internal user permissions for run Wazuh app backend jobs"
 tags: "wazuh_app,wazuh_app_jobs,permissions"
 version: ""

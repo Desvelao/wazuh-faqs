@@ -8,23 +8,25 @@ const menuLinks = [
     label: "Home",
   },
   {
+    link: "/apps",
+    label: "Apps",
+  },
+  {
     link: "/faqs",
     label: "FAQs",
   },
   {
-    link: "/apps",
-    label: "Apps",
-  },
-  // {
-  //   link: "/dev_utils",
-  //   label: "Dev utils",
-  // }
+    link: "/dev_utils",
+    label: "Development utils",
+  }
 ]
+const isLinkActive = ({ isPartiallyCurrent, isCurrent, ...rest }, shouldUseIsPartiallyCurrent) => {
+  return shouldUseIsPartiallyCurrent
+  ? (isPartiallyCurrent ? { style: { color: "black" } } : {})
+  : (isCurrent ? { style: { color: "black" } } : {})
+};
 
 export function Layout({ children }) {
-  const isPartiallyActive = ({ isPartiallyCurrent }) => {
-    return isPartiallyCurrent ? { style: { color: "black" } } : {}
-  }
   return (
     <>
       <div className="layout_menu">
@@ -33,7 +35,7 @@ export function Layout({ children }) {
             {menuLinks.map(({ link, label }) => (
               <Link
                 key={`layout_link_${link}`}
-                {...(link !== "/" ? { getProps: isPartiallyActive } : {})}
+                getProps={(props) => isLinkActive(props, link !== "/")}
                 to={link}
               >
                 {label}

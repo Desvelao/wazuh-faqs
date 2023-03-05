@@ -19,7 +19,7 @@ export default function TemplateDataComponent({
         {documentationLink && (
           <>
             <Spacer size="s" />
-            <a href={documentationLink} target="_blank">
+            <a href={documentationLink} target="_blank" rel="noopener noreferrer">
               Documentation
             </a>
           </>

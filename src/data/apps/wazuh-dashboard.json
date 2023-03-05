@@ -95,39 +95,63 @@
   ],
   "commands": [
     {
+      "label": "Service start - systemctl",
+      "value": "systemctl start wazuh-dashboard"
+    },
+    {
+      "label": "Service start - service",
+      "value": "service wazuh-dashboard start"
+    },
+    {
+      "label": "Service stop - systemctl",
+      "value": "systemctl stop wazuh-dashboard"
+    },
+    {
+      "label": "Service stop - service",
+      "value": "service wazuh-dashboard stop"
+    },
+    {
       "label": "Get version",
-      "value": "bin/openserach-dashboards --version"
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards --version"
     },
     {
       "label": "Plugins - Install by URL",
-      "value": "bin/openserach-dashboards-plugin install <url>"
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin install <url>"
     },
     {
       "label": "Plugins - Install local file",
-      "value": "bin/openserach-dashboards-plugin install file://<absolute_path_to_local_file>"
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin install file://<absolute_path_to_local_file>"
     },
     {
       "label": "Plugins - Remove",
-      "value": "bin/openserach-dashboards-plugin remove <plugin_name>"
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin remove <plugin_name>"
     },
     {
       "label": "Plugins - List",
-      "value": "bin/openserach-dashboards-plugin list"
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin list"
     },
     {
       "label": "Keystore - List",
-      "value": "bin/openserach-dashboards-keystore list"
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-keystore list"
     },
     {
       "label": "Keystore - Add",
-      "value": "bin/openserach-dashboards-keystore add <setting>"
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-keystore add <setting>"
     },
     {
       "label": "Keystore - Remove",
-      "value": "bin/openserach-dashboards-keystore remove <setting>"
-    }
+      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-keystore remove <setting>"
+    }    
   ],
   "debug": [
+    {
+      "label": "Service status - systemctl",
+      "value": "systemctl status wazuh-dashboard"
+    },
+    {
+      "label": "Service status - service",
+      "value": "service wazuh-dashboard status"
+    },
     {
       "label": "Logs (journalctl) - get all logs",
       "value": "journalctl -u wazuh-dashboard"
@@ -135,6 +159,6 @@
     {
       "label": "Logs (journalctl) - get logs filtering by errors or warnings",
       "value": "journalctl -u wazuh-dashboard | grep -iE \"err|warn\""
-    }
+    }    
   ]
 }

@@ -2,6 +2,7 @@
 slug: "wazuh-kibana-plugin-customize-plugin-names"
 date: "2022-07-20"
 title: "Customize the plugin title and plugin category label in the sidebar"
+author: ""
 description: "Customize the plugin title and plugin category label in the sidebar"
 tags: "wazuh_app,wazuh_app_customization"
 version: ""

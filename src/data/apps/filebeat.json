@@ -43,6 +43,22 @@
   "backup": [],
   "commands": [
     {
+      "label": "Service start - systemctl",
+      "value": "systemctl start filebeat"
+    },
+    {
+      "label": "Service start - service",
+      "value": "service filebeat start"
+    },
+    {
+      "label": "Service stop - systemctl",
+      "value": "systemctl stop filebeat"
+    },
+    {
+      "label": "Service stop - service",
+      "value": "service filebeat stop"
+    },
+    {
       "label": "Get version",
       "value": "filebeat version"
     },
@@ -56,6 +72,18 @@
     }
   ],
   "debug": [
+    {
+      "label": "Service status - systemctl",
+      "value": "systemctl status filebeat"
+    },
+    {
+      "label": "Service status - service",
+      "value": "service filebeat status"
+    },
+    {
+      "label": "Connection Filebeat to output",
+      "value": "filebeat test output"
+    },
     {
       "label": "Logs - Get errors or warning",
       "value": "grep -iE \"err|warn\" /var/log/filebeat/filebeat"

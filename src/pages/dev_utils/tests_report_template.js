@@ -213,31 +213,33 @@ export default function TestReportTemplate({ location }) {
                 </div>
             </Flyout>
         )}
-        <div className="mb-s" style={{display: "flex", justifyContent: "space-between"}}>
-            <div>
-                <label className="mr-s button" for="import-file">Import JSON file</label>
-                <Input
-                    type="file"
-                    id="import-file"
-                    name="import-file"
-                    accept="application/json"
-                    onChange={async (event) => {
-                        try{
-                            const file = event.target.files.item(0)
-                            const text = await file.text()
-                            const data = JSON.parse(text)
-                            data.globalTestSuite && setPluginPlatform(data.globalTestSuite)
-                            data.globalBrowsers && setGlobalBrowsers(data.globalBrowsers)
-                            data.tests && data.tests.length && setTests(data.tests)
-                            data.options && setOptions(data.options)
-                        }catch(error){
-                            console.error(error)
-                        }
-
-                    }}
-                />
-            </div>
+        <div className="mb-s" style={{display: "flex", justifyContent: "flexEnd"}}>
+            {/* <div className="mx-m d-flex" style={{gap: "10px", flexWrap: "wrap"}}>
+                
+            </div> */}
             <div className="mx-m d-flex" style={{gap: "10px", flexWrap: "wrap"}}>
+                <span className="mx-xs">
+                    <label className="button" for="import-file" style={{display: "block"}}>Import JSON file</label>
+                    <Input
+                        type="file"
+                        id="import-file"
+                        name="import-file"
+                        accept="application/json"
+                        onChange={async (event) => {
+                            try{
+                                const file = event.target.files.item(0)
+                                const text = await file.text()
+                                const data = JSON.parse(text)
+                                data.globalTestSuite && setPluginPlatform(data.globalTestSuite)
+                                data.globalBrowsers && setGlobalBrowsers(data.globalBrowsers)
+                                data.tests && data.tests.length && setTests(data.tests)
+                                data.options && setOptions(data.options)
+                            }catch(error){
+                                console.error(error)
+                            }
+                        }}
+                    />
+                </span>
                 <span className="mx-xs">
                     <Button
                         onClick={reset}
@@ -299,7 +301,7 @@ export default function TestReportTemplate({ location }) {
                     </div>
                     <div>
                         <div>Options</div>
-                        <label className="mr-s" for="options-test.status.enabled">test.status.enabled</label>
+                        <label className="mr-s" for="options-test.status.enabled" title="Enable the test status">test.status.enabled</label>
                         <Input type="checkbox" id={"options-test.status.enabled"} name={"options-test.status.enabled"} checked={options["test.status.enabled"]} onChange={onChangeOptionsCreator("test.status.enabled")}/>
                     </div>
                     <div>

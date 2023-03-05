@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Layout } from "../components"
+import { Link } from "gatsby"
 import "../styles/utility.css"
 import "../styles/base.css"
 
@@ -191,8 +192,46 @@ export default function HomePage() {
         <p>
           Hello!
         </p>
-        <p>This is a resource that stores some solutions to errors and information about the applications used in the deployment of <a href="https://wazuh.com/">Wazuh</a>.</p>
+        <p>
+          This webpage is the result of the need to share information gathered from my local notes with co-workers.
+          It is a personal compilation of data related to development, debugging and solving some frequently problems (communities) related to <a href="https://wazuh.com/" rel="noopener noreferrer">Wazuh</a>.
+        </p>
+        <p>The objectives are:</p>
+        <ul>
+          <li>Summary the data related to development and debugging</li>
+          <li>Expose the data and utilities to be used or consumed by other co-workers. This reduces my inverted time to reply to some questions of co-workers and provide another source of information</li>
+          <li>Friendly usage making easy copy-pasting the data</li>
+        </ul>
+        <p>To get more information about Wazuh, visit its webpage <a href="https://wazuh.com/" rel="noopener noreferrer">Wazuh</a>.</p>
+        <p>Wazuh documentation: <a href="https://documentation.wazuh.com/current/index.html" rel="noopener noreferrer">Wazuh documentation</a>.</p>
+      </div>
+      <div>
+        <p>What can you find here?</p>
+        <ul>
+          <li>Data about <Link to="/apps">applications</Link>
+            <ul>
+              <li>general information</li>
+              <li>backup files</li>
+              <li>basic commands</li>
+              <li>debug commands</li>
+            </ul>
+          </li>
+          <li>How to solve some <Link to="/faqs">FAQs</Link> that users could ask</li>
+          <li>Some <Link to="/dev_utils">development utility</Link> that me and the co-workers could use
+            <ul>
+              <li>generator of templates for manual tests (used for pull requests or releases)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>Personal objectives:</p>
+        <ul>
+          <li>Learn and play with <a href="https://www.gatsbyjs.com/" rel="noopener noreferrer">GatsbyJS</a></li>
+          <li>Build CSS styles from scratch</li>
+        </ul>
       </div>
     </Layout>
   )
 }
+

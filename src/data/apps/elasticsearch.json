@@ -141,15 +141,39 @@
   ],
   "commands": [
     {
+      "label": "Service start - systemctl",
+      "value": "systemctl start elasticsearch"
+    },
+    {
+      "label": "Service start - service",
+      "value": "service elasticsearch start"
+    },
+    {
+      "label": "Service stop - systemctl",
+      "value": "systemctl stop elasticsearch"
+    },
+    {
+      "label": "Service stop - service",
+      "value": "service elasticsearch stop"
+    },
+    {
       "label": "Get version",
-      "value": "bin/elasticsearch --version"
+      "value": "<ELASTICSEARCH_PATH>/bin/elasticsearch --version"
     },
     {
       "label": "Plugins - List",
-      "value": "bin/elasticsearch-plugin list"
+      "value": "<ELASTICSEARCH_PATH>/bin/elasticsearch-plugin list"
     }
   ],
   "debug": [
+    {
+      "label": "Service status - systemctl",
+      "value": "systemctl status elasticsearch"
+    },
+    {
+      "label": "Service status - service",
+      "value": "service elasticsearch status"
+    },
     {
       "label": "Logs - get logs filtering by errors or warnings",
       "value": "grep -iE \"err|warn\" /var/log/elasticsearch/<CLUSTER_NAME>.log"

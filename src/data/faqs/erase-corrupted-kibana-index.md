@@ -2,6 +2,7 @@
 slug: "erase-corrupted-kibana-index"
 date: "2021-09-28"
 title: "Erase corrupted kibana index"
+author: ""
 description: "Steps to remove and reset the Kibana index whent it is corrupted"
 tags: ".kibana,kibana,index,indices,delete,remove"
 version: ""
