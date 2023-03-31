@@ -1,6 +1,6 @@
 {
-  "name": "Wazuh",
-  "slug": "wazuh",
+  "name": "Wazuh manager",
+  "slug": "wazuh-manager",
   "description": "Wazuh is a free and open source platform for threat detection, security monitoring, incident response and regulatory compliance. It can be used to monitor endpoints, cloud services and containers, and to aggregate and analyze data from external sources.",
   "documentationLink": "https://documentation.wazuh.com/current/",
   "icon": "",
@@ -80,7 +80,7 @@
             "value": "WAZUH_PATH/etc/lists"
           },
           {
-            "description": "User - decpders",
+            "description": "User - decoders",
             "value": "WAZUH_PATH/etc/decoders"
           },
           {

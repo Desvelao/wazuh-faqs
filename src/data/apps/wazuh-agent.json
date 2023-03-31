@@ -1,0 +1,147 @@
+{
+  "name": "Wazuh agent",
+  "slug": "wazuh-agent",
+  "description": "Wazuh is a free and open source platform for threat detection, security monitoring, incident response and regulatory compliance. It can be used to monitor endpoints, cloud services and containers, and to aggregate and analyze data from external sources.",
+  "documentationLink": "https://documentation.wazuh.com/current/",
+  "icon": "",
+  "info": [
+    {
+      "type": "table",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "id": "value",
+            "label": "Value",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Installation folder (WAZUH_PATH)",
+            "value": "C:\\Program Files (x86)\\ossec-agent"
+          },
+          {
+            "description": "Configuration file",
+            "value": "WAZUH_PATH\\etc\\ossec.conf"
+          },
+          {
+            "description": "Local internal options file",
+            "value": "WAZUH_PATH\\etc\\local_internal_options.conf"
+          },
+          {
+            "description": "Logs",
+            "value": "WAZUH_PATH\\logs/ossec.log"
+          },
+          {
+            "description": "Service",
+            "value": "WazuhSvc"
+          }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Manager files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "Directory",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Shared",
+            "value": "WAZUH_PATH/etc/shared"
+          },
+          {
+            "description": "Client keys",
+            "value": "WAZUH_PATH/etc/client.keys"
+          }
+        ]
+      }
+    }
+  ],
+  "backup": [
+    {
+      "type": "table",
+      "title": "Backup folders/files",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "File",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "Configuration",
+            "value": "WAZUH_PATH/etc/ossec.conf"
+          },
+          {
+            "description": "Internal options",
+            "value": "WAZUH_PATH/etc/local_internal_options.conf"
+          },
+          {
+            "description": "Manager - Client keys",
+            "value": "WAZUH_PATH/etc/client.keys"
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [
+    {
+      "label": "Service start - systemctl",
+      "value": "NET START WazuhSvc"
+    },
+    {
+      "label": "Service stop - systemctl",
+      "value": "NET STOP WazuhSvc"
+    },
+    {
+      "label": "Get version",
+      "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
+    },
+    {
+      "label": "Get version - use wazuh-control info",
+      "value": "/var/ossec/info/wazuh-control info | grep VERSION"
+    },
+    {
+      "label": "Get info",
+      "value": "/var/ossec/info/wazuh-control info"
+    }    
+  ],
+  "debug": [
+    {
+      "label": "Service status - systemctl",
+      "value": "systemctl status wazuh-agent"
+    },
+    {
+      "label": "Service status - service",
+      "value": "service wazuh-agent start"
+    },
+    {
+      "label": "Logs - get all logs",
+      "value": "Get-content /var/ossec/logs/ossec.log"
+    },
+    {
+      "label": "Logs - filter errors and warnings- NOT TESTED",
+      "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"err\", \"|warn\""
+    }
+  ]
+}
