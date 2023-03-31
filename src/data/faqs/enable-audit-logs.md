@@ -17,7 +17,7 @@ Enable the logging for the audit logs, adding to the configuration:
 
 - **Elasticsearch with Open Distro for Elasticsearch:**
 ```xml
-opendistro_security.audit.type:: <debug|internal_opensearch|external_opensearch|webhook|log4j>
+opendistro_security.audit.type:: <debug|internal_opensearch|external_elasticsearch|webhook|log4j>
 ```
 
 [Documentation](https://opendistro.github.io/for-elasticsearch-docs/docs/security/audit-logs/)
