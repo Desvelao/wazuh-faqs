@@ -59,7 +59,7 @@ function FAQsIndex({ data, location }) {
                     node: {
                       frontmatter: { tags },
                     },
-                  }) => (tags && tags.split(",")) || []
+                  }) => tags || []
                 )
                 .flat()
                 .filter((value, index, array) => array.indexOf(value) === index)
@@ -92,7 +92,7 @@ function FAQsIndex({ data, location }) {
                     },
                   }) =>
                     filterTags.length
-                      ? tags.split(",").some((tag) => filterTags.includes(tag))
+                      ? tags.some((tag) => filterTags.includes(tag))
                       : true
                 )
                 .map(({ node: { frontmatter } }) => (
@@ -104,7 +104,7 @@ function FAQsIndex({ data, location }) {
                       className="mb-s mx-s"
                       title={frontmatter.title}
                       description={frontmatter.description}
-                      tags={frontmatter.tags.split(",").sort().map((tag) => (
+                      tags={frontmatter.tags.sort().map((tag) => (
                         <Tag key={tag}>{tag}</Tag>
                       ))}
                       onClick={() => {

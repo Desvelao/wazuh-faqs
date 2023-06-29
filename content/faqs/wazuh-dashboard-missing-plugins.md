@@ -4,7 +4,7 @@ date: "2023-04-28"
 title: "Wazuh dashboard missing plugins"
 author: ""
 description: ""
-tags: "anomaly-detection,wazuh-dashboard,wazuh-dashboard-plugins"
+tags: [ "anomaly-detection", "wazuh-dashboard", "wazuh-dashboard-plugins" ]
 version: ""
 ---
 

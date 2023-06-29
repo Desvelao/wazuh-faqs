@@ -4,7 +4,7 @@ date: "2021-10-08"
 title: "Error 429 on healthcheck missing API"
 author: ""
 description: "Ensure the wz-token is stored properly"
-tags: "kibana,healthcheck,429,cookies,wz-token"
+tags: [ "kibana", "healthcheck", "429", "cookies", "wz-token" ]
 version: ""
 ---
 

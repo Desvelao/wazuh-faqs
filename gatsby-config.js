@@ -9,14 +9,14 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "faqs",
-        path: `${__dirname}/src/data/faqs`,
+        path: `${__dirname}/content/faqs`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "apps",
-        path: `${__dirname}/src/data/apps`,
+        path: `${__dirname}/content/apps`,
       },
     },
     "gatsby-transformer-remark",

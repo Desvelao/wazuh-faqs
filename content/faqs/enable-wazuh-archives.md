@@ -4,7 +4,7 @@ date: "2022-04-18"
 title: "Enable Wazuh archives"
 author: ""
 description: "Enable Wazuh `archives` in the manager and Filebeat"
-tags: "filebeat,archives"
+tags: [ "filebeat", "archives" ]
 version: ""
 ---
 

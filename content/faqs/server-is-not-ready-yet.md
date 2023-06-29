@@ -4,7 +4,7 @@ date: "2020-07-06"
 title: "Server is not ready yet"
 author: ""
 description: ""
-tags: "kibana,wazuh-dashboard"
+tags: [ "kibana", "wazuh-dashboard" ]
 version: ""
 ---
 
@@ -13,7 +13,6 @@ version: ""
 Message displayed when accessing to the URL where is exposed the platform:
 - Kibana server is not ready yet 
 - Wazuh dashboard server is not ready yet
-
 
 ### Remediation
 

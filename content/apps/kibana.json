@@ -142,7 +142,11 @@
     {
       "label": "Keystore - Remove",
       "value": "<KIBANA_PATH>/bin/kibana-keystore remove <setting>"
-    }
+    },
+    {
+      "label": "Remove bundles (Kibana old)",
+      "value": "rm -rf /usr/share/kibana/optimize/bundles"
+    }    
   ],
   "debug": [
     {

@@ -4,7 +4,7 @@ date: "2020-09-15"
 title: "Wazuh app backend jobs permissions"
 author: ""
 description: "Give to the Kibana internal user permissions for run Wazuh app backend jobs"
-tags: "wazuh_app,wazuh_app_jobs,permissions"
+tags: [ "wazuh-app", "wazuh-app-jobs", "permissions" ]
 version: ""
 ---
 

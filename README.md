@@ -97,6 +97,10 @@ docker run -itd --rm --name wazuh-faqs -w "/home/node/app" -v "$(pwd):/home/node
 
 ## Guides
 
+### Add content
+
+- [faqs](./content/create_faq.md)
+
 ### Styles customization
 
 Some styles can be changed through a centralized file where you can change some properties of components.

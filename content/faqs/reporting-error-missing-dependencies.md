@@ -4,7 +4,7 @@ date: "2023-02-07"
 title: "Reporting error due to missing dependencies"
 author: ""
 description: "Reporting error due to missing dependencies. Puppeter."
-tags: "puppeteer,reporting,wazuh-dashboard"
+tags: [ "puppeteer", "reporting", "wazuh-dashboard" ]
 version: ""
 ---
 

@@ -4,7 +4,7 @@ date: "2020-09-15"
 title: "Reached the shards limit by node"
 author: ""
 description: "shards limits"
-tags: "elasticsearch,shards,wazih-indexer"
+tags: [ "elasticsearch", "shards", "wazuh-indexer" ]
 version: ""
 ---
 

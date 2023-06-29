@@ -21,7 +21,11 @@
         ],
         "rows": [
           {
-            "description": "Installation folder (WAZUH_PATH)",
+            "description": "Installation folder (WAZUH_PATH) - Linux",
+            "value": "/var/ossec"
+          },
+          {
+            "description": "Installation folder (WAZUH_PATH) - Windows",
             "value": "C:\\Program Files (x86)\\ossec-agent"
           },
           {
@@ -37,7 +41,7 @@
             "value": "WAZUH_PATH\\logs/ossec.log"
           },
           {
-            "description": "Service",
+            "description": "Service - Windows (Power Shell)",
             "value": "WazuhSvc"
           }
         ]
@@ -142,6 +146,14 @@
     {
       "label": "Logs - filter errors and warnings- NOT TESTED",
       "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"err\", \"|warn\""
+    },
+    {
+      "label": "Logs - filter by agent registration",
+      "value": "grep wazuh-agentd /var/ossec/logs/ossec.log"
+    },
+    {
+      "label": "Logs - filter by agent registration",
+      "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"wazuh-agentd\""
     }
   ]
 }

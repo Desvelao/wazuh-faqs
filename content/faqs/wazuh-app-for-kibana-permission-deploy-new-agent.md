@@ -4,7 +4,7 @@ date: "2022-09-23"
 title: "Permission error in the Deploy new agent page"
 author: ""
 description: "Error \"This section could not be displayed because you do not have permission to get access to the registration service.\" in the Deploy new agent page."
-tags: "wazuh-app,permissions"
+tags: [ "wazuh-app", "permissions" ]
 version: ""
 ---
 

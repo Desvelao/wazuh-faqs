@@ -4,7 +4,7 @@ date: "2020-09-15"
 title: "Hide sensitive values in the Filebeat configuration file"
 author: ""
 description: "Hide sensitive values in the Filebeat configuration file as credentials, urls"
-tags: "filebeat,configuration,hide,credentials,password"
+tags: [ "filebeat", "configuration", "hide", "credentials", "password" ]
 version: ""
 ---
 

@@ -4,7 +4,7 @@ date: "2022-10-27"
 title: "Validate the internal user password"
 author: ""
 description: "Validate the internal user password."
-tags: "opensearch,secure,wazuh-indexer"
+tags: [ "opensearch", "secure", "wazuh-indexer" ]
 version: ""
 ---
 

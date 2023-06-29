@@ -5,7 +5,6 @@ import { copyToClipboard } from "../../utils"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
-  ...rest
 }) {
   const {
     markdownRemark: { frontmatter, html },
@@ -40,26 +39,6 @@ export default function Template({
               </Button>
             </div>
         </div>
-        {/* <Button
-          onClick={() => {
-            if (!fetchRemediationText) {
-              const fileUrl = `https://raw.githubusercontent.com/Desvelao/wazuh-faqs/main/src/data/faqs/${frontmatter.slug}.md`
-              console.log(`Fetching file: ${fileUrl}`)
-              fetch(fileUrl)
-                .then((response) => response.text())
-                .then((response) => getFAQRemediationFromMarkdown(response))
-                .then((response) => {
-                  setFetchRemediationText(response)
-                  copyToClipboard(response)
-                })
-                .catch(console.error)
-            } else {
-              copyToClipboard(fetchRemediationText)
-            }
-          }}
-        >
-          Copy remediation (in Markdown)
-        </Button> */}
         {frontmatter.version && (
           <div>
             <Tag>Version: {frontmatter.version}</Tag>
@@ -75,7 +54,6 @@ export default function Template({
         {frontmatter.tags && (
           <div>
             {frontmatter.tags
-              .split(",")
               .map((tag) => <Tag key={tag}>{tag}</Tag>)}
             <Spacer />
           </div>

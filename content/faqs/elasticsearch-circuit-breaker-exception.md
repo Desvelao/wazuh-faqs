@@ -4,7 +4,7 @@ date: "2022-07-20"
 title: "Circuit breaker error"
 author: "Desvelao"
 description: "circuit_breaking_exception Data too large error"
-tags: "elasticsearch,cricuit-breaker-exception"
+tags:  [ "elasticsearch", "circuit-breaker-exception" ]
 version: ""
 ---
 

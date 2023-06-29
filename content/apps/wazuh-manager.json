@@ -211,7 +211,11 @@
     {
       "label": "Get info",
       "value": "/var/ossec/info/wazuh-control info"
-    }    
+    },
+    {
+      "label": "Agent keys - List",
+      "value": "cat /var/ossec/etc/client.keys"
+    }
   ],
   "debug": [
     {

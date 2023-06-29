@@ -4,7 +4,7 @@ date: "2022-06-20"
 title: "Alerts are not showing in the Wazuh plugin"
 author: ""
 description: ""
-tags: "alerts,elasticsearch,filebeat,wazuh-app,wazuh-indexer"
+tags: [ "alerts", "elasticsearch", "filebeat", "wazuh-app", "wazuh-indexer" ]
 version: ""
 ---
 
