@@ -80,7 +80,7 @@ function FAQsIndex({ data, location }) {
                       frontmatter: { description, tags, title },
                     },
                   }) =>
-                    [description, title, tags].some(
+                    [description, title, ...(tags && tags.length ? tags : [])].some(
                       (k) =>
                         k && k.toLowerCase().includes(searchTerm.toLowerCase())
                     )
