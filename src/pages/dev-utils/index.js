@@ -1,12 +1,12 @@
 import * as React from "react"
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { Layout, Card } from "../../components"
 
 const links = [
     {
         label: "Tests report template",
         description: "Generate a template in Markdown to report the manual testing of UI/backend tests related to the development of Wazuh plugins for Kibana, Wazuh dashboard or Splunk.",
-        path: "tests_report_template"
+        path: "tests-report-template"
     }
 ]
 

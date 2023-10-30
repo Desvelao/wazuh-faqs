@@ -38,3 +38,9 @@ export const classNames = (names) =>
     })
     .map(([key]) => key)
     .join(" ")
+
+
+export function getParametersFromURL(location, parameters){
+  const urlParameters = new URLSearchParams(location.search)
+  return parameters.map((parameter) => urlParameters.get(parameter))
+}

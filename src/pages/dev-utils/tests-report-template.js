@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Button, Callout, Flyout, Input, Layout } from "../../components"
 import { copyToClipboard, downloadAsFile } from "../../utils"
-import "./tests_report_template.css"
+import "./tests-report-template.css"
 
 const defaultBrowsers = ["Chrome", "Edge", "Firefox", "Safari"]
 const preselectedBrowsers = ["Chrome", "Firefox", "Safari"]
@@ -59,7 +59,7 @@ const issueResultEmoji = {
 }
 
 const initialState = {
-    globalTestSuite: "Wazuh dashboard",
+    globalTestSuite: "",
     globalBrowsers: [...preselectedBrowsers],
     options: { ["test.status.enabled"]: false},
     tests: [{...defaultTest, browsers: [...preselectedBrowsers]}],
@@ -82,6 +82,12 @@ const pageTips = [
     {
         type: "info",
         message: <>
+            <strong>Info:</strong> <code>suite</code> URL parameter can be used to set the suite title. Example: suite=Wazuh dashboard
+        </>
+    },
+    {
+        type: "info",
+        message: <>
             <strong>Info:</strong> <code>browsers</code> URL parameter can be used to set the preselected browsers for new tests. Allowed values: {defaultBrowsers.map(defaultBrowser => defaultBrowser.toLowerCase()). join(', ')}. Multiple browsers can be defined using the , separator.
             Example: browsers=chrome,firefox
         </>
@@ -92,7 +98,15 @@ const pageTips = [
             <strong>Info:</strong> <code>type</code> URL parameter can be used to set the preselected type for new tests. Allowed values: {defaultTestTypes.map(({value}) => value). join(', ')}.
             Example: type=backend
         </>
+    },
+    {
+        type: "info",
+        message: <>
+            <strong>Info:</strong> <code>option-test-result-enabled</code> URL parameter can be used to set the test-result-enabled option. Example: option-test-result-enabled=true
+        </>
     }
+
+    
 ]
 
 export default function TestReportTemplate({ location }) {
@@ -104,7 +118,7 @@ export default function TestReportTemplate({ location }) {
     const [flyoutOpened, setFlyoutOpened] = React.useState(false)
 
     React.useEffect(() => {
-        setStateFromURLParameters(location, {globalBrowsers: setGlobalBrowsers, testType: setTestType, tests: setTests, options: setOptions}, {type: initialState.type, browsers: [...initialState.globalBrowsers]})
+        setStateFromURLParameters(location, {testSuite: setPluginPlatform, globalBrowsers: setGlobalBrowsers, testType: setTestType, tests: setTests, options: setOptions}, {type: initialState.type, browsers: [...initialState.globalBrowsers]})
     },[])
 
     const addNewTestToForm = () => setTests([...tests, createNewTestCase({type: testType, browsers: [...globalBrowsers]})])
@@ -197,6 +211,12 @@ export default function TestReportTemplate({ location }) {
 
     const disabledExportButtons = !tests.every(({title}) => title)
 
+    const getExportedFilename = (extension) => {
+        const dateString = new Date().toISOString(); // "2023-10-20T06:56:12.313Z"
+        const filename = dateString.replace(/[:]/g, '-').replace(/.\d{3}Z$/,'').replace(/T/g, '_');
+        return `${globalTestSuite ? `${globalTestSuite.toLowerCase().replace(/[\s]/g,"")}_` : ''}${filename}${extension}`;
+    }
+
     return (
       <Layout>
         {flyoutOpened && (
@@ -277,7 +297,7 @@ export default function TestReportTemplate({ location }) {
                 <span className="mx-xs">
                     <Button
                         disabled={disabledExportButtons}
-                        onClick={() => downloadAsFile(generatedText, "text/plain", "tests.md")}
+                        onClick={() => downloadAsFile(generatedText, "text/plain", getExportedFilename(".md"))}
                     >
                         Export to Markdown file
                     </Button>
@@ -285,7 +305,7 @@ export default function TestReportTemplate({ location }) {
                 <span className="mx-xs">
                     <Button
                         disabled={disabledExportButtons}
-                        onClick={() => downloadAsFile(JSON.stringify({globalTestSuite, options, tests}, null, 2), "application/json", "tests.json")}
+                        onClick={() => downloadAsFile(JSON.stringify({globalTestSuite, options, tests}, null, 2), "application/json", getExportedFilename(".json"))}
                     >
                         Export to JSON file
                     </Button>
@@ -442,9 +462,7 @@ function main({globalTestSuite, tests, options}){
         return [...browsersSet].sort()
     })(uiTests)
 
-    return `# ${globalTestSuite}
-
-Legend:
+    return `${globalTestSuite ? `# ${globalTestSuite}\n\n` : ''}Legend:
 ${testResults.map(({emoji_markdown, value}) => `${emoji_markdown}: ${value}`).join('\n')}
 
 ${uiTests.length ? `## UI
@@ -499,9 +517,12 @@ ${otherTests.map(({ title, url, results }) => {
 }
 
 function setStateFromURLParameters(location, setters, defaults){
-    const [globalBrowsersParam, testTypeParam, optionsTestResultEnabled]  = getParametersFromURL(location, ["browsers", "type", "option-test-result-enabled"])
+    const [suiteParam, globalBrowsersParam, testTypeParam, optionsTestResultEnabled]  = getParametersFromURL(location, ["suite", "browsers", "type", "option-test-result-enabled"])
     
     let customBrowsers, customType
+    if(suiteParam){
+        setters.testSuite(suiteParam);
+    }
     if(globalBrowsersParam){
         const selectedGlobalBrowsers = transformGlobalBrowsersParameter(globalBrowsersParam)
         if(globalBrowsersParam.length){

@@ -217,7 +217,7 @@ export default function HomePage() {
             </ul>
           </li>
           <li>How to solve some <Link to="/faqs">FAQs</Link> that users could ask</li>
-          <li>Some <Link to="/dev_utils">development utility</Link> that me and the co-workers could use
+          <li>Some <Link to="/dev-utils">development utility</Link> that me and the co-workers could use
             <ul>
               <li>generator of templates for manual tests (used for pull requests or releases)</li>
             </ul>
