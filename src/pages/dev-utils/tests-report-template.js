@@ -2,6 +2,7 @@ import * as React from "react"
 import { Button, Callout, Flyout, Input, Layout } from "../../components"
 import { copyToClipboard, downloadAsFile } from "../../utils"
 import "./tests-report-template.css"
+import { ButtonFlyout } from "../../components/button/button-flyout"
 
 const defaultBrowsers = ["Chrome", "Edge", "Firefox", "Safari"]
 const preselectedBrowsers = ["Chrome", "Firefox", "Safari"]
@@ -104,9 +105,7 @@ const pageTips = [
         message: <>
             <strong>Info:</strong> <code>option-test-result-enabled</code> URL parameter can be used to set the test-result-enabled option. Example: option-test-result-enabled=true
         </>
-    }
-
-    
+    } 
 ]
 
 export default function TestReportTemplate({ location }) {
@@ -115,7 +114,6 @@ export default function TestReportTemplate({ location }) {
     const [testType, setTestType] = React.useState(defaultTestTypes[0].value)
     const [tests, setTests] = React.useState([...initialState.tests])
     const [options, setOptions] = React.useState({...initialState.options})
-    const [flyoutOpened, setFlyoutOpened] = React.useState(false)
 
     React.useEffect(() => {
         setStateFromURLParameters(location, {testSuite: setPluginPlatform, globalBrowsers: setGlobalBrowsers, testType: setTestType, tests: setTests, options: setOptions}, {type: initialState.type, browsers: [...initialState.globalBrowsers]})
@@ -218,21 +216,20 @@ export default function TestReportTemplate({ location }) {
     }
 
     return (
-      <Layout>
-        {flyoutOpened && (
-            <Flyout
-                onClose={() => setFlyoutOpened(false)}
-            >
-                <div className="mb-s">
-                    <div className="mb-s">Tips</div>
-                    {pageTips.map(({type, message}) => (
-                        <Callout type={type} className="mb-s">
-                            {message}
-                        </Callout>
-                    ))}
-                </div>
-            </Flyout>
-        )}
+      <Layout buttons={
+        <div>
+        <ButtonFlyout label='Tips'>
+            <div className="mb-s">
+                <div className="mb-s">Tips</div>
+                {pageTips.map(({type, message}) => (
+                    <Callout type={type} className="mb-s">
+                        {message}
+                    </Callout>
+                ))}
+            </div>
+        </ButtonFlyout>
+      </div>
+      }>
         <div className="mb-s" style={{display: "flex", justifyContent: "flexEnd"}}>
             {/* <div className="mx-m d-flex" style={{gap: "10px", flexWrap: "wrap"}}>
                 
@@ -271,22 +268,6 @@ export default function TestReportTemplate({ location }) {
                 </span>
                 <span className="mx-xs">
                     <Button
-                        onClick={() => setFlyoutOpened((open) => !open)}
-                        title="See tips"
-                    >
-                        Tips
-                    </Button>
-                </span>
-                <span className="mx-xs">
-                    <Button
-                        disabled={disabledExportButtons}
-                        onClick={() => console.log(generatedText)}
-                    >
-                        View Markdown text in browser console (See in the browser dev tools)
-                    </Button>
-                </span>
-                <span className="mx-xs">
-                    <Button
                         disabled={disabledExportButtons}
                         onClick={() => copyToClipboard(generatedText)}
                     >
@@ -316,7 +297,7 @@ export default function TestReportTemplate({ location }) {
             <div className="mb-s">
                 <div className="mb-s d-flex" style={{gap: "10px", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between"}}>
                     <div>
-                        <label className="mr-s" for="test_suite">Tests suite</label>
+                        <label className="mr-s" for="test_suite">Suite name</label>
                         <Input type="text" id="test_suite" name="test_suite" value={globalTestSuite} onChange={(event) => setPluginPlatform(event.target.value)}/>
                     </div>
                     <div>

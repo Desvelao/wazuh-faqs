@@ -11,7 +11,8 @@ export function Flyout({ children, onClose }){
                 top: 0,
                 backgroundColor: "white",
                 zIndex: 999,
-                padding: "10px"
+                padding: "10px",
+                borderLeft: "1px solid grey"
             }}
         >
             <div style={{display: "flex", justifyContent: "flex-end"}}>

@@ -1,0 +1,12 @@
+.apps-search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.apps-layout{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}

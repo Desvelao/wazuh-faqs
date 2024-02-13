@@ -16,7 +16,7 @@ const menuLinks = [
     label: "FAQs",
   },
   {
-    link: "/dev_utils",
+    link: "/dev-utils",
     label: "Development utils",
   }
 ]
@@ -26,21 +26,25 @@ const isLinkActive = ({ isPartiallyCurrent, isCurrent, ...rest }, shouldUseIsPar
   : (isCurrent ? { style: { color: "black" } } : {})
 };
 
-export function Layout({ children }) {
+export function Layout({ children, buttons }) {
+
   return (
     <>
       <div className="layout_menu">
         <div className="layout_menu_links">
-          <div>
-            {menuLinks.map(({ link, label }) => (
-              <Link
-                key={`layout_link_${link}`}
-                getProps={(props) => isLinkActive(props, link !== "/")}
-                to={link}
-              >
-                {label}
-              </Link>
-            ))}
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
+            <div>
+              {menuLinks.map(({ link, label }) => (
+                <Link
+                  key={`layout_link_${link}`}
+                  getProps={(props) => isLinkActive(props, link !== "/")}
+                  to={link}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+            {buttons && <div className="layout_buttons">{buttons}</div>}
           </div>
         </div>
       </div>

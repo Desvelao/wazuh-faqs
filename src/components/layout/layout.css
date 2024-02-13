@@ -31,6 +31,12 @@ body {
   margin-top: 3rem;
 }
 
+.layout_buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .markdown code {
   background-color: var(--color-markdown-code);
   padding: 2px;

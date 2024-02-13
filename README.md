@@ -4,7 +4,7 @@
 
 ## Description
 
-This repository is a personal compilation of data related to development, debugging and solving some frequently problems (communities) related to [Wazuh](https://wazuh.com/).
+This repository is a personal compilation of data related to development, debugging and solving some frequently asked questions related to [Wazuh](https://wazuh.com/).
 
 The objectives are:
 - Summary the local notes

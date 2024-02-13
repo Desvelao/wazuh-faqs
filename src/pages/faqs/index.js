@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { graphql, navigate } from "gatsby"
 import { Callout, Card, Copyable, LabelCheckbox, Tag, Layout } from "../../components"
+import { ButtonFlyout } from "../../components/button/button-flyout"
+import { SearchBar } from "../../components/search_bar/search_bar"
 
 function FAQsIndex({ data, location }) {
   const { allMarkdownRemark } = data
@@ -22,14 +24,20 @@ function FAQsIndex({ data, location }) {
     }
   },[])
   return (
-    <Layout>
-      <div className="mb-s">
-        <Callout type="info">
+    <Layout buttons={
+      <div>
+        <ButtonFlyout label='Tips'>
+          <div className="mb-s">Tips</div>
+          <div className="mb-s">
+          <Callout type="info">
           <strong>Tip:</strong> you can search in these faqs through a browser search engine. Add it to your browser: <Copyable copy={`${location.href}?q=%s`}>
             <code>{location.href}?q=%s</code>
           </Copyable>.
         </Callout>
+          </div>
+        </ButtonFlyout>
       </div>
+    }>
       <div className="mb-s">
         <div className="d-flex">
           <div
@@ -37,19 +45,7 @@ function FAQsIndex({ data, location }) {
             style={{ minWidth: "15%", flexBasis: "15%" }}
           >
             <div className="mb-s">
-              <input
-                className="input mb-s mr-s"
-                placeholder="Search"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ width: "70%" }}
-              />
-              <span
-                className="cursor-pointer"
-                onClick={() => setSearchTerm("")}
-              >
-                ✖
-              </span>
+              <SearchBar onChange={setSearchTerm} value={searchTerm}></SearchBar>
             </div>
             <div className="mb-s t-center">Filter by tags</div>
             <div className="d-flex" style={{ flexWrap: "wrap" }}>

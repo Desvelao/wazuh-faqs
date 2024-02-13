@@ -22,4 +22,11 @@
 
 .button-primary {
   background-color: var(--color-primary);
+  color: white;
+}
+
+.button-primary:hover:enabled {
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
 }

@@ -194,7 +194,7 @@ export default function HomePage() {
         </p>
         <p>
           This webpage is the result of the need to share information gathered from my local notes with co-workers.
-          It is a personal compilation of data related to development, debugging and solving some frequently problems (communities) related to <a href="https://wazuh.com/" rel="noopener noreferrer">Wazuh</a>.
+          It is a personal compilation of data related to development, debugging and solving some frequently asked questions related to <a href="https://wazuh.com/" rel="noopener noreferrer">Wazuh</a>.
         </p>
         <p>The objectives are:</p>
         <ul>
