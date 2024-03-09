@@ -20,14 +20,14 @@ export default function Template({
               <Button
                 onClick={() => {
                   if (!fetchRemediationText) {
-                    const fileUrl = `https://raw.githubusercontent.com/Desvelao/wazuh-faqs/main/src/data/faqs/${frontmatter.slug}.md`
+                    const fileUrl = `https://raw.githubusercontent.com/Desvelao/wazuh-faqs/main/content/faqs/${frontmatter.slug}.md`
                     console.log(`Fetching file: ${fileUrl}`)
                     fetch(fileUrl)
                       .then((response) => response.text())
-                      .then((response) => getFAQRemediationFromMarkdown(response))
                       .then((response) => {
-                        setFetchRemediationText(response)
-                        copyToClipboard(response)
+                        const text = getFAQRemediationFromMarkdown(response);
+                        setFetchRemediationText(text)
+                        copyToClipboard(text)
                       })
                       .catch(console.error)
                   } else {
