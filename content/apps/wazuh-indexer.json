@@ -176,6 +176,10 @@
     {
       "label": "Logs - get logs filtering by errors or warnings",
       "value": "grep -iE \"err|warn\" /var/log/wazuh-indexer/<CLUSTER_NAME>.log"
+    },
+    {
+      "label": "Logs - get logs filtering by errors or warnings with context",
+      "value": "grep -iE -C 10 \"err|warn\" /var/log/wazuh-indexer/<CLUSTER_NAME>.log"
     }
   ]
 }

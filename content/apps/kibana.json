@@ -34,11 +34,11 @@
           },
           {
             "description": "Keystore (package)",
-            "value": "/etc/wazuh-dashboard/kibana.keystore"
+            "value": "/etc/kibana/kibana.keystore"
           },
           {
             "description": "Keystore (zip)",
-            "value": "<WAZUH_DASHBOARD_HOME>/config/kibana.keystore"
+            "value": "<KIBANA_HOME>/config/kibana.keystore"
           },
           {
             "description": "Logs",

@@ -124,6 +124,32 @@
           }
         ]
       }
+    },{
+      "type": "table",
+      "title": "Daemon stats",
+      "contentTable": {
+        "columns": [
+          {
+            "id": "description",
+            "label": "Key"
+          },
+          {
+            "id": "value",
+            "label": "File",
+            "copyable": true
+          }
+        ],
+        "rows": [
+          {
+            "description": "analysisd",
+            "value": "/var/ossec/var/run/wazuh-analysisd.state"
+          },
+          {
+            "description": "remoted",
+            "value": "/var/ossec/var/run/wazuh-remoted.state"
+          }
+        ]
+      }
     }
   ],
   "backup": [
@@ -237,6 +263,22 @@
     {
       "label": "API logs - get all logs",
       "value": "cat /var/ossec/logs/api.log"
+    },
+    {
+      "label": "Watch events dropped on analysisd - using watch",
+      "value": "while sleep 5; do grep \"events_dropped\" /var/ossec/var/run/wazuh-analysisd.state; done"
+    },
+    {
+      "label": "Watch events discarded on remoted - using watch",
+      "value": "while sleep 5; do grep \"discarded_count\" /var/ossec/var/run/wazuh-remoted.state; done"
+    },
+    {
+      "label": "Watch events dropped on analysisd - using watch",
+      "value": "watch -n 5 grep \"events_dropped\" /var/ossec/var/run/wazuh-analysisd.state"
+    },
+    {
+      "label": "Watch events discarded on remoted - using watch",
+      "value": "watch -n 5 grep \"discarded_count\" /var/ossec/var/run/wazuh-remoted.state"
     }
   ]
 }

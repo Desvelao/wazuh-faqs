@@ -9,7 +9,6 @@ export default function TemplateDataComponent({
 }) {
   const [{ backup, info, commands, debug, name, description, documentationLink }] =
     nodes
-  console.log({nodes})
 
   return (
     <Layout>

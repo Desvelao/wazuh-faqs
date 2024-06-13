@@ -181,6 +181,10 @@
     {
       "label": "Logs - get logs filtering by errors or warnings",
       "value": "grep -iE \"err|warn\" /var/log/elasticsearch/<CLUSTER_NAME>.log"
+    },
+    {
+      "label": "Logs - get logs filtering by errors or warnings with context",
+      "value": "grep -iE \"err|warn\" -C 10 /var/log/elasticsearch/<CLUSTER_NAME>.log"
     }
   ]
 }
