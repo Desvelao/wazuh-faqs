@@ -11,10 +11,12 @@ export const Card = ({ title, description, tags, className, onClick }) => (
   >
     <div className="header">
       <div className="title">{title}</div>
-      <div className="tags">{tags}</div>
     </div>
     <div className="body">
       <div className="description">{description}</div>
+    </div>
+    <div class="footer">
+      <div className="tags">{tags}</div>
     </div>
   </div>
 )

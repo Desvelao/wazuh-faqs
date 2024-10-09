@@ -41,20 +41,20 @@ export default function Template({
         </div>
         {frontmatter.version && (
           <div>
-            <Tag>Version: {frontmatter.version}</Tag>
+            <Tag label={`Version: ${frontmatter.version}`} />
             <Spacer />
           </div>
         )}
         {frontmatter.author && (
           <div>
-            <Tag>by: {frontmatter.author}</Tag>
+            <Tag label={`by: ${frontmatter.author}`} />
             <Spacer />
           </div>
         )}
         {frontmatter.tags && (
-          <div>
+          <div className="tags">
             {frontmatter.tags
-              .map((tag) => <Tag key={tag}>{tag}</Tag>)}
+              .map((tag) => <Tag key={tag} label={tag} />)}
             <Spacer />
           </div>
         )}

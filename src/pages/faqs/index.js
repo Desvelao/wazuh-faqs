@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react"
 import { graphql, navigate } from "gatsby"
-import { Callout, Card, Copyable, LabelCheckbox, Tag, Layout } from "../../components"
+import { Callout, Card, Copyable, Tag, Layout } from "../../components"
 import { ButtonFlyout } from "../../components/button/button-flyout"
 import { SearchBar } from "../../components/search_bar/search_bar"
+import "./index.css"
 
 function FAQsIndex({ data, location }) {
   const { allMarkdownRemark } = data
   const [searchTerm, setSearchTerm] = useState("")
   const [filterTags, setFilterTags] = useState([])
-  const onChangeSelectTag = (event) => {
+  const onChangeSelectTag = ({ checked, value }) => {
     setFilterTags([
-      ...filterTags.filter((tag) => tag !== event.target.value),
-      ...(event.target.checked ? [event.target.value] : []),
+      ...filterTags.filter((tag) => tag !== value),
+      ...(checked ? [value] : []),
     ])
   };
   useEffect(() => {
@@ -39,7 +40,7 @@ function FAQsIndex({ data, location }) {
       </div>
     }>
       <div className="mb-s">
-        <div className="d-flex">
+        <div className="container">
           <div
             className="mb-s mx-s"
             style={{ minWidth: "15%", flexBasis: "15%" }}
@@ -47,8 +48,8 @@ function FAQsIndex({ data, location }) {
             <div className="mb-s">
               <SearchBar onChange={setSearchTerm} value={searchTerm}></SearchBar>
             </div>
-            <div className="mb-s t-center">Filter by tags</div>
-            <div className="d-flex" style={{ flexWrap: "wrap" }}>
+            <div className="mb-s">Filter by tags</div>
+            <div className="checkboxes" style={{ flexWrap: "wrap" }}>
               {allMarkdownRemark.edges
                 .map(
                   ({
@@ -61,55 +62,46 @@ function FAQsIndex({ data, location }) {
                 .filter((value, index, array) => array.indexOf(value) === index)
                 .sort()
                 .map((tag) => (
-                  <div className="mr-s mb-s ml-s" key={tag}>
-                    <LabelCheckbox label={tag} onChange={onChangeSelectTag} />
-                  </div>
+                  <Tag key={tag} label={tag} onChange={onChangeSelectTag} />
                 ))}
             </div>
           </div>
-          <div className="mx-s">
-            <div className="d-flex mb-s" style={{ flexWrap: "wrap" }}>
-              {allMarkdownRemark.edges
-                .filter(
-                  ({
-                    node: {
-                      frontmatter: { description, tags, title },
-                    },
-                  }) =>
-                    [description, title, ...(tags && tags.length ? tags : [])].some(
-                      (k) =>
-                        k && k.toLowerCase().includes(searchTerm.toLowerCase())
-                    )
-                )
-                .filter(
-                  ({
-                    node: {
-                      frontmatter: { tags },
-                    },
-                  }) =>
-                    filterTags.length
-                      ? tags.some((tag) => filterTags.includes(tag))
-                      : true
-                )
-                .map(({ node: { frontmatter } }) => (
-                  <div
-                    style={{ flexBasis: "33.33%", width: "100%" }}
-                    key={frontmatter.slug}
-                  >
-                    <Card
-                      className="mb-s mx-s"
-                      title={frontmatter.title}
-                      description={frontmatter.description}
-                      tags={frontmatter.tags.sort().map((tag) => (
-                        <Tag key={tag}>{tag}</Tag>
-                      ))}
-                      onClick={() => {
-                        navigate(frontmatter.slug)
-                      }}
-                    />
-                  </div>
-                ))}
-            </div>
+          <div className="cards mb-s" style={{ flexWrap: "wrap" }}>
+            {allMarkdownRemark.edges
+              .filter(
+                ({
+                  node: {
+                    frontmatter: { description, tags, title },
+                  },
+                }) =>
+                  [description, title, ...(tags && tags.length ? tags : [])].some(
+                    (k) =>
+                      k && k.toLowerCase().includes(searchTerm.toLowerCase())
+                  )
+              )
+              .filter(
+                ({
+                  node: {
+                    frontmatter: { tags },
+                  },
+                }) =>
+                  filterTags.length
+                    ? tags.some((tag) => filterTags.includes(tag))
+                    : true
+              )
+              .map(({ node: { frontmatter } }) => (
+                <Card
+                  key={frontmatter.slug}
+                  title={frontmatter.title}
+                  description={frontmatter.description}
+                  tags={frontmatter.tags.sort().map((tag) => (
+                    <Tag key={tag} label={tag} />
+                  ))}
+                  onClick={() => {
+                    navigate(frontmatter.slug)
+                  }}
+                />
+              ))}
           </div>
         </div>
       </div>

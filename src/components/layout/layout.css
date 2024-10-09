@@ -58,8 +58,11 @@ body {
   padding: 4px;
   color: var(--color-primary);
   border-radius: 3px;
-  margin: 0 5px;
   font-size: 0.8em;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .color-primary-all {

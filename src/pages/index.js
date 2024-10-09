@@ -3,6 +3,7 @@ import { Layout } from "../components"
 import { Link } from "gatsby"
 import "../styles/utility.css"
 import "../styles/base.css"
+import "../styles/global.css"
 
 // styles
 const pageStyles = {
