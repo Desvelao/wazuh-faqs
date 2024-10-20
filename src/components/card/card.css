@@ -17,6 +17,14 @@
   margin-top: 4px;
 }
 
+.card > .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .card > .body > .description {
   font-size: 0.9em;
   color: var(--color-subdued);

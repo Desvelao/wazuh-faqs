@@ -9,7 +9,6 @@ export default function Apps(props) {
   const [searchTerm, setSearchTerm] = React.useState('')
   const { nodes } = props.data.allAppsJson
 
-  
   React.useEffect(() => {
     const params = new URLSearchParams(props.location.search)
     const querySearch = params.get("q")
@@ -19,7 +18,7 @@ export default function Apps(props) {
       navigate("/apps", {replace: true})
     }
   },[])
-  
+
   const apps = searchTerm ? nodes.filter(({name, description}) => [name, description].some(value => value.toLowerCase().includes(searchTerm.toLowerCase()))) : nodes
 
   return (
@@ -42,15 +41,14 @@ export default function Apps(props) {
       </div>
       <div className="mb-s apps-layout">
         {apps.map((node) => (
-          <div key={node.name}>
-            <Card
-              title={node.name}
-              description={node.description}
-              onClick={() => {
-                navigate(node.slug)
-              }}
-            ></Card>
-          </div>
+          <Card
+            key={node.name}
+            title={node.name}
+            description={node.description}
+            onClick={() => {
+              navigate(node.slug)
+            }}
+          ></Card>
         ))}
       </div>
     </Layout>
