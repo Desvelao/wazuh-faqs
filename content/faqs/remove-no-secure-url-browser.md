@@ -4,7 +4,6 @@ date: "2024-05-22"
 title: "Remove the untrusted URL from browser"
 author: "Desvelao"
 description: "Remove the untrusted URL from browser"
-author: "Desvelao."
 tags: [ "browser", "secure" ]
 version: ""
 ---
