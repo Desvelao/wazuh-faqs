@@ -110,23 +110,31 @@
   ],
   "commands": [
     {
-      "label": "Service start - systemctl",
+      "label": "Service start - Linux",
+      "value": "systemctl start wazuh-agent"
+    },
+    {
+      "label": "Service stop - Linux",
+      "value": "systemctl stop wazuh-agent"
+    },
+    {
+      "label": "Service start - Windows",
       "value": "NET START WazuhSvc"
     },
     {
-      "label": "Service stop - systemctl",
+      "label": "Service stop - Windows",
       "value": "NET STOP WazuhSvc"
     },
     {
-      "label": "Get version",
+      "label": "Get version - Linux",
       "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
     },
     {
-      "label": "Get version - use wazuh-control info",
+      "label": "Get version - Linux - use wazuh-control info",
       "value": "/var/ossec/info/wazuh-control info | grep VERSION"
     },
     {
-      "label": "Get info",
+      "label": "Get info - Linux",
       "value": "/var/ossec/info/wazuh-control info"
     }    
   ],
@@ -140,19 +148,31 @@
       "value": "service wazuh-agent start"
     },
     {
-      "label": "Logs - get all logs",
-      "value": "Get-content /var/ossec/logs/ossec.log"
+      "label": "Service status - Windows",
+      "value": "TODO"
     },
     {
-      "label": "Logs - filter errors and warnings- NOT TESTED",
+      "label": "Logs - Linux - get all logs",
+      "value": "cat /var/ossec/logs/ossec.log"
+    },
+    {
+      "label": "Logs - Linux - get errors and warnings",
+      "value": "grep -iE \"err|warn\" /var/ossec/logs/ossec.log"
+    },
+    {
+      "label": "Logs - Linux - filter by agent registration",
+      "value": "grep \"wazuh-agentd\" /var/ossec/logs/ossec.log"
+    },
+    {
+      "label": "Logs - Windows - get all logs",
+      "value": "Get-content C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log"
+    },
+    {
+      "label": "Logs - Windows - filter errors and warnings- NOT TESTED",
       "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"err\", \"|warn\""
     },
     {
-      "label": "Logs - filter by agent registration",
-      "value": "grep wazuh-agentd /var/ossec/logs/ossec.log"
-    },
-    {
-      "label": "Logs - filter by agent registration",
+      "label": "Logs - Windows - filter by agent registration",
       "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"wazuh-agentd\""
     }
   ]
