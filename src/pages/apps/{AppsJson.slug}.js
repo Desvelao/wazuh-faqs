@@ -1,13 +1,57 @@
 import React from "react"
-import { Command, Tabs, Table, Spacer, Layout } from "../../components"
+import { Command, Table, Spacer, Layout, Script, TabsURLManaged } from "../../components"
 import { graphql } from "gatsby"
+
+const RenderDataComponentConfigurationMap = {
+  table: ({columns, rows,title, ...props}) => {
+    return (<>
+      {title && <div>{title}</div>}
+      <Table columns={columns} rows={rows} />
+    </>)
+  },
+  text: (props) => {
+  return <div>{props.value}</div>},
+  script: ({text, ...rest}) => {
+    return (
+      <>
+        {text && <div>{text}</div>}
+        <Script {...rest} copyable={true}>
+          {rest.value}
+        </Script>
+    
+      </>
+    )
+  },
+  command: ({...rest}) => {
+    return (
+      <Command {...rest} copyable={true}>
+        {rest.value}
+      </Command>)
+  }
+}
+
+function RenderDataComponentGeneric({config, renderMap}){
+  return (
+    <>
+      {config.map(({type, ...rest}) => {
+        const Component = renderMap[type];
+        const props = rest[type];
+        return Component ? <>
+            <Component {...props} />
+            <Spacer />
+          </> : null
+      })}
+    </>
+  )
+}
 
 export default function TemplateDataComponent({
   data: {
     allAppsJson: { nodes },
   },
+  location
 }) {
-  const [{ backup, info, commands, debug, name, description, documentationLink }] =
+  const [{ name, description, documentationLink, info_tabs }] =
     nodes
 
   return (
@@ -25,112 +69,13 @@ export default function TemplateDataComponent({
         )}
         <Spacer />
 
-        <Tabs
-          tabs={[
-            {
-              id: "info",
-              label: "Info",
-              render: () => (
-                <>
-                  {info &&
-                    info.map((element, index) => (
-                      <div>
-                        {element.title && (
-                          <>
-                            <div>{element.title}</div>
-                            <Spacer />
-                          </>
-                        )}
-                        {element.type === "table" && element.contentTable && (
-                          <>
-                            <Table {...element.contentTable} />
-                            <Spacer />
-                          </>
-                        )}
-                        {element.type === "commands" &&
-                          element.contentCommands &&
-                          element.contentCommands.map((command) => (
-                            <>
-                              <Command {...command} copyable={true}>
-                                {command.value}
-                              </Command>
-                              <Spacer />
-                            </>
-                          ))}
-                      </div>
-                    ))}
-                </>
-              ),
-            },
-            {
-              id: "backup",
-              label: "Backup",
-              render: () => (
-                <>
-                  {backup &&
-                    backup.map((element, index) => (
-                      <div>
-                        {element.title && (
-                          <>
-                            <div>{element.title}</div>
-                            <Spacer />
-                          </>
-                        )}
-                        {element.type === "table" && element.contentTable && (
-                          <>
-                            <Table {...element.contentTable} />
-                            <Spacer />
-                          </>
-                        )}
-                        {element.type === "commands" &&
-                          element.contentCommands &&
-                          element.contentCommands.map((command) => (
-                            <>
-                              <Command {...command} copyable={true}>
-                                {command.value}
-                              </Command>
-                              <Spacer />
-                            </>
-                          ))}
-                      </div>
-                    ))}
-                </>
-              ),
-            },
-            {
-              id: "commands",
-              label: "Commands",
-              render: () => (
-                <>
-                  {commands.map((command) => (
-                    <>
-                      <Command {...command} copyable={true}>
-                        {command.value}
-                      </Command>
-                      <Spacer />
-                    </>
-                  ))}
-                </>
-              ),
-            },
-            {
-              id: "debug",
-              label: "Debug",
-              render: () => (
-                <>
-                  {debug.map((deb) => (
-                    <>
-                      <Command {...deb} copyable={true}>
-                        {deb.value}
-                      </Command>
-                      <Spacer />
-                    </>
-                  ))}
-                </>
-              ),
-            },
-          ]}
-        />
+        {info_tabs && ( 
+          <TabsURLManaged location={location} tabs={info_tabs.map(({label, content}) => ({
+            id: label,
+            label,
+            render: () => <RenderDataComponentGeneric config={content} renderMap={RenderDataComponentConfigurationMap}/>
+          }))}/>
+        )}
       </div>
     </Layout>
   )
@@ -141,51 +86,36 @@ export const query = graphql`
     allAppsJson(filter: { slug: { eq: $slug } }) {
       nodes {
         name
-        info {
-          contentCommands {
-            label
-            value
-          }
-          contentTable {
-            columns {
-              copyable
-              id
-              label
-            }
-            rows {
-              description
+        info_tabs {
+          label
+          content {
+            type
+            text {
               value
             }
-          }
-          title
-          type
-        }
-        backup {
-          contentTable {
-            columns {
-              copyable
-              id
-              label
+            script {
+              language
+              value
+              text
             }
-            rows {
-              description
+            command {
+              label
               value
             }
+            table {
+              title
+              columns {
+                copyable
+                id
+                label
+              }
+              rows {
+                description
+                value
+              }
+            }
           }
-          title
-          type
-        }
-        description
-        documentationLink
-        icon
-        commands {
-          label
-          value
-        }
-        debug {
-          label
-          value
-        }
+        }  
       }
     }
   }

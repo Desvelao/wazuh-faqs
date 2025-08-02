@@ -4,281 +4,354 @@
   "description": "Wazuh is a free and open source platform for threat detection, security monitoring, incident response and regulatory compliance. It can be used to monitor endpoints, cloud services and containers, and to aggregate and analyze data from external sources.",
   "documentationLink": "https://documentation.wazuh.com/current/",
   "icon": "",
-  "info": [
+  "info_tabs": [
     {
-      "type": "table",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "id": "value",
-            "label": "Value",
-            "copyable": true
+      "label": "Info",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "Manager files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Description"
+              },
+              {
+                "id": "value",
+                "label": "Value",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Installation folder (WAZUH_PATH)",
+                "value": "/var/ossec"
+              },
+              {
+                "description": "Configuration file",
+                "value": "WAZUH_PATH/etc/ossec.conf"
+              },
+              {
+                "description": "Local internal options file",
+                "value": "WAZUH_PATH/etc/local_internal_options.conf"
+              },
+              {
+                "description": "Logs",
+                "value": "WAZUH_PATH/logs"
+              },
+              {
+                "description": "Logs - Manager",
+                "value": "WAZUH_PATH/logs/ossec.log"
+              },
+              {
+                "description": "Logs - API",
+                "value": "WAZUH_PATH/logs/api.log"
+              },
+              {
+                "description": "Service",
+                "value": "wazuh-manager"
+              },
+              {
+                "description": "Bin",
+                "value": "WAZUH_PATH/bin/ossec-control"
+              },
+              {
+                "description": "Bin",
+                "value": "WAZUH_PATH/bin/wazuh-control"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Installation folder (WAZUH_PATH)",
-            "value": "/var/ossec"
-          },
-          {
-            "description": "Configuration file",
-            "value": "WAZUH_PATH/etc/ossec.conf"
-          },
-          {
-            "description": "Local internal options file",
-            "value": "WAZUH_PATH/etc/local_internal_options.conf"
-          },
-          {
-            "description": "Logs",
-            "value": "WAZUH_PATH/logs"
-          },
-          {
-            "description": "Logs - Manager",
-            "value": "WAZUH_PATH/logs/ossec.log"
-          },
-          {
-            "description": "Logs - API",
-            "value": "WAZUH_PATH/logs/api.log"
-          },
-          {
-            "description": "Service",
-            "value": "wazuh-manager"
-          },
-          {
-            "description": "Bin",
-            "value": "WAZUH_PATH/bin/ossec-control"
-          },
-          {
-            "description": "Bin",
-            "value": "WAZUH_PATH/bin/wazuh-control"
+        },
+        {
+          "type": "table",
+          "table": {
+            "title": "Files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "Directory",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "User - lists",
+                "value": "WAZUH_PATH/etc/lists"
+              },
+              {
+                "description": "User - decoders",
+                "value": "WAZUH_PATH/etc/decoders"
+              },
+              {
+                "description": "User rules",
+                "value": "WAZUH_PATH/etc/rules"
+              },
+              {
+                "description": "Shared",
+                "value": "WAZUH_PATH/etc/shared"
+              },
+              {
+                "description": "Client keys",
+                "value": "WAZUH_PATH/etc/client.keys"
+              }
+            ]
           }
-        ]
-      }
-    },
-    {
-      "type": "table",
-      "title": "Manager files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "Directory",
-            "copyable": true
+        },
+        {
+          "type": "table",
+          "table": {
+            "title": "Alerts files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "File",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "JSON",
+                "value": "WAZUH_PATH/logs/alerts/alerts.json"
+              },
+              {
+                "description": "Log",
+                "value": "WAZUH_PATH/logs/alerts/alerts.log"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "User - lists",
-            "value": "WAZUH_PATH/etc/lists"
-          },
-          {
-            "description": "User - decoders",
-            "value": "WAZUH_PATH/etc/decoders"
-          },
-          {
-            "description": "User rules",
-            "value": "WAZUH_PATH/etc/rules"
-          },
-          {
-            "description": "Shared",
-            "value": "WAZUH_PATH/etc/shared"
-          },
-          {
-            "description": "Client keys",
-            "value": "WAZUH_PATH/etc/client.keys"
+        },
+        {
+          "type": "table",
+          "table": {
+            "title": "Daemon stats",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "File",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "analysisd",
+                "value": "/var/ossec/var/run/wazuh-analysisd.state"
+              },
+              {
+                "description": "remoted",
+                "value": "/var/ossec/var/run/wazuh-remoted.state"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     {
-      "type": "table",
-      "title": "Alerts files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "File",
-            "copyable": true
+      "label": "Backup",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "Backup folders/files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "File",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Manager - Configuration",
+                "value": "WAZUH_PATH/etc/ossec.conf"
+              },
+              {
+                "description": "Manager - Internal options",
+                "value": "WAZUH_PATH/etc/local_internal_options.conf"
+              },
+              {
+                "description": "Manager - Decoders",
+                "value": "WAZUH_PATH/etc/decoders/local_decoders.xml"
+              },
+              {
+                "description": "Manager - Rules",
+                "value": "WAZUH_PATH/etc/rules/local_rules.xml"
+              },
+              {
+                "description": "Manager - Client keys",
+                "value": "WAZUH_PATH/etc/client.keys"
+              },
+              {
+                "description": "API - Configuration",
+                "value": "WAZUH_PATH/etc/local_internal_options.conf"
+              },
+              {
+                "description": "API - Auth",
+                "value": "WAZUH_PATH/api/configuration/auth"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "JSON",
-            "value": "WAZUH_PATH/logs/alerts/alerts.json"
-          },
-          {
-            "description": "Log",
-            "value": "WAZUH_PATH/logs/alerts/alerts.log"
-          }
-        ]
-      }
-    },{
-      "type": "table",
-      "title": "Daemon stats",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "File",
-            "copyable": true
-          }
-        ],
-        "rows": [
-          {
-            "description": "analysisd",
-            "value": "/var/ossec/var/run/wazuh-analysisd.state"
-          },
-          {
-            "description": "remoted",
-            "value": "/var/ossec/var/run/wazuh-remoted.state"
-          }
-        ]
-      }
-    }
-  ],
-  "backup": [
-    {
-      "type": "table",
-      "title": "Backup folders/files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "File",
-            "copyable": true
-          }
-        ],
-        "rows": [
-          {
-            "description": "Manager - Configuration",
-            "value": "WAZUH_PATH/etc/ossec.conf"
-          },
-          {
-            "description": "Manager - Internal options",
-            "value": "WAZUH_PATH/etc/local_internal_options.conf"
-          },
-          {
-            "description": "Manager - Decoders",
-            "value": "WAZUH_PATH/etc/decoders/local_decoders.xml"
-          },
-          {
-            "description": "Manager - Rules",
-            "value": "WAZUH_PATH/etc/rules/local_rules.xml"
-          },
-          {
-            "description": "Manager - Client keys",
-            "value": "WAZUH_PATH/etc/client.keys"
-          },
-          {
-            "description": "API - Configuration",
-            "value": "WAZUH_PATH/etc/local_internal_options.conf"
-          },
-          {
-            "description": "API - Auth",
-            "value": "WAZUH_PATH/api/configuration/auth"
-          }
-        ]
-      }
-    }
-  ],
-  "commands": [
-    {
-      "label": "Service start - systemctl",
-      "value": "systemctl start wazuh"
+        }
+      ]
     },
     {
-      "label": "Service start - service",
-      "value": "service wazuh start"
+      "label": "Commands",
+      "content":[
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - systemctl",
+                "value": "systemctl start wazuh"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - service",
+                "value": "service wazuh start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - wazuh-control binary",
+                "value": "<WAZUH_PATH>/bin/wazuh-control start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - systemctl",
+                "value": "systemctl stop wazuh"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - service",
+                "value": "service wazuh stop"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - wazuh-control binary",
+                "value": "<WAZUH_PATH>/bin/wazuh-control stop"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version",
+                "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version - use wazuh-control info",
+                "value": "/var/ossec/info/wazuh-control info | grep VERSION"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get info",
+                "value": "/var/ossec/info/wazuh-control info"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Agent keys - List",
+                "value": "cat /var/ossec/etc/client.keys"
+            }
+        }
+      ]
     },
     {
-      "label": "Service start - wazuh-control binary",
-      "value": "<WAZUH_PATH>/bin/wazuh-control start"
-    },
-    {
-      "label": "Service stop - systemctl",
-      "value": "systemctl stop wazuh"
-    },
-    {
-      "label": "Service stop - service",
-      "value": "service wazuh stop"
-    },
-    {
-      "label": "Service stop - wazuh-control binary",
-      "value": "<WAZUH_PATH>/bin/wazuh-control stop"
-    },
-    {
-      "label": "Get version",
-      "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
-    },
-    {
-      "label": "Get version - use wazuh-control info",
-      "value": "/var/ossec/info/wazuh-control info | grep VERSION"
-    },
-    {
-      "label": "Get info",
-      "value": "/var/ossec/info/wazuh-control info"
-    },
-    {
-      "label": "Agent keys - List",
-      "value": "cat /var/ossec/etc/client.keys"
-    }
-  ],
-  "debug": [
-    {
-      "label": "Service status - systemctl",
-      "value": "systemctl status wazuh"
-    },
-    {
-      "label": "Service status - service",
-      "value": "service wazuh start"
-    },
-    {
-      "label": "Manager logs - get all logs",
-      "value": "cat /var/ossec/logs/ossec.log"
-    },
-    {
-      "label": "Manager logs - filter errors and warnings",
-      "value": "grep -iE \"err|warn\" /var/ossec/logs/ossec.log"
-    },
-    {
-      "label": "API logs - get all logs",
-      "value": "cat /var/ossec/logs/api.log"
-    },
-    {
-      "label": "Watch events dropped on analysisd - using watch",
-      "value": "while sleep 5; do grep \"events_dropped\" /var/ossec/var/run/wazuh-analysisd.state; done"
-    },
-    {
-      "label": "Watch events discarded on remoted - using watch",
-      "value": "while sleep 5; do grep \"discarded_count\" /var/ossec/var/run/wazuh-remoted.state; done"
-    },
-    {
-      "label": "Watch events dropped on analysisd - using watch",
-      "value": "watch -n 5 grep \"events_dropped\" /var/ossec/var/run/wazuh-analysisd.state"
-    },
-    {
-      "label": "Watch events discarded on remoted - using watch",
-      "value": "watch -n 5 grep \"discarded_count\" /var/ossec/var/run/wazuh-remoted.state"
+      "label": "Debug",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - systemctl",
+                "value": "systemctl status wazuh"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - service",
+                "value": "service wazuh start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Manager logs - get all logs",
+                "value": "cat /var/ossec/logs/ossec.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Manager logs - filter errors and warnings",
+                "value": "grep -iE \"err|warn\" /var/ossec/logs/ossec.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "API logs - get all logs",
+                "value": "cat /var/ossec/logs/api.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Watch events dropped on analysisd - using watch",
+                "value": "while sleep 5; do grep \"events_dropped\" /var/ossec/var/run/wazuh-analysisd.state; done"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Watch events discarded on remoted - using watch",
+                "value": "while sleep 5; do grep \"discarded_count\" /var/ossec/var/run/wazuh-remoted.state; done"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Watch events dropped on analysisd - using watch",
+                "value": "watch -n 5 grep \"events_dropped\" /var/ossec/var/run/wazuh-analysisd.state"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Watch events discarded on remoted - using watch",
+                "value": "watch -n 5 grep \"discarded_count\" /var/ossec/var/run/wazuh-remoted.state"
+            }
+        }
+      ]
     }
   ]
 }

@@ -50,7 +50,7 @@ Depending on the format of the index name:
     }
     ```
 
-Replace the `CONDITION` placeholder by the condition to separate the event to another index. See the how to run contionally the processor https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html#conditionally-run-processor.
+Replace the `CONDITION` placeholder by the condition to separate the event to another index. See the how to run contionally the processor https://www.elastic.co/guide/en/elasticsearch/reference/7.10/ingest-conditionals.html.
 
 
 The ingest pipeline can be modified through:
@@ -65,3 +65,6 @@ The ingest pipeline can be modified through:
   - get pipeline: https://www.elastic.co/guide/en/elasticsearch/reference/7.10/get-pipeline-api.html
 
 Ensure the ingest pipeline was modified correctly. The new events should be separated in different indices according to the ingest pipeline.
+
+References:
+- Ingest pipeline processors: https://www.elastic.co/guide/en/elasticsearch/reference/7.10/ingest-processors.html

@@ -4,176 +4,239 @@
   "description": "Wazuh is a free and open source platform for threat detection, security monitoring, incident response and regulatory compliance. It can be used to monitor endpoints, cloud services and containers, and to aggregate and analyze data from external sources.",
   "documentationLink": "https://documentation.wazuh.com/current/",
   "icon": "",
-  "info": [
+  "info_tabs": [
     {
-      "type": "table",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "id": "value",
-            "label": "Value",
-            "copyable": true
+      "label": "Info",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "General",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Description"
+              },
+              {
+                "id": "value",
+                "label": "Value",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Installation folder (WAZUH_PATH) - Linux",
+                "value": "/var/ossec"
+              },
+              {
+                "description": "Installation folder (WAZUH_PATH) - Windows",
+                "value": "C:\\Program Files (x86)\\ossec-agent"
+              },
+              {
+                "description": "Configuration file",
+                "value": "WAZUH_PATH\\etc\\ossec.conf"
+              },
+              {
+                "description": "Local internal options file",
+                "value": "WAZUH_PATH\\etc\\local_internal_options.conf"
+              },
+              {
+                "description": "Logs",
+                "value": "WAZUH_PATH\\logs/ossec.log"
+              },
+              {
+                "description": "Service - Windows (Power Shell)",
+                "value": "WazuhSvc"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Installation folder (WAZUH_PATH) - Linux",
-            "value": "/var/ossec"
-          },
-          {
-            "description": "Installation folder (WAZUH_PATH) - Windows",
-            "value": "C:\\Program Files (x86)\\ossec-agent"
-          },
-          {
-            "description": "Configuration file",
-            "value": "WAZUH_PATH\\etc\\ossec.conf"
-          },
-          {
-            "description": "Local internal options file",
-            "value": "WAZUH_PATH\\etc\\local_internal_options.conf"
-          },
-          {
-            "description": "Logs",
-            "value": "WAZUH_PATH\\logs/ossec.log"
-          },
-          {
-            "description": "Service - Windows (Power Shell)",
-            "value": "WazuhSvc"
+        },
+        {
+          "type": "table",
+          "table": {
+            "title": "Manager files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "Directory",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Shared",
+                "value": "WAZUH_PATH/etc/shared"
+              },
+              {
+                "description": "Client keys",
+                "value": "WAZUH_PATH/etc/client.keys"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     {
-      "type": "table",
-      "title": "Manager files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "Directory",
-            "copyable": true
+      "label": "Backup",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "Backup folders/files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "File",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Configuration",
+                "value": "WAZUH_PATH/etc/ossec.conf"
+              },
+              {
+                "description": "Internal options",
+                "value": "WAZUH_PATH/etc/local_internal_options.conf"
+              },
+              {
+                "description": "Manager - Client keys",
+                "value": "WAZUH_PATH/etc/client.keys"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Shared",
-            "value": "WAZUH_PATH/etc/shared"
-          },
-          {
-            "description": "Client keys",
-            "value": "WAZUH_PATH/etc/client.keys"
-          }
-        ]
-      }
-    }
-  ],
-  "backup": [
-    {
-      "type": "table",
-      "title": "Backup folders/files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "File",
-            "copyable": true
-          }
-        ],
-        "rows": [
-          {
-            "description": "Configuration",
-            "value": "WAZUH_PATH/etc/ossec.conf"
-          },
-          {
-            "description": "Internal options",
-            "value": "WAZUH_PATH/etc/local_internal_options.conf"
-          },
-          {
-            "description": "Manager - Client keys",
-            "value": "WAZUH_PATH/etc/client.keys"
-          }
-        ]
-      }
-    }
-  ],
-  "commands": [
-    {
-      "label": "Service start - Linux",
-      "value": "systemctl start wazuh-agent"
+        }
+      ]
     },
     {
-      "label": "Service stop - Linux",
-      "value": "systemctl stop wazuh-agent"
+      "label": "Commands",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - Linux",
+                "value": "systemctl start wazuh-agent"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - Linux",
+                "value": "systemctl stop wazuh-agent"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - Windows",
+                "value": "NET START WazuhSvc"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - Windows",
+                "value": "NET STOP WazuhSvc"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version - Linux",
+                "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version - Linux - use wazuh-control info",
+                "value": "/var/ossec/info/wazuh-control info | grep VERSION"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get info - Linux",
+                "value": "/var/ossec/info/wazuh-control info"
+            }
+        }
+      ]
     },
     {
-      "label": "Service start - Windows",
-      "value": "NET START WazuhSvc"
-    },
-    {
-      "label": "Service stop - Windows",
-      "value": "NET STOP WazuhSvc"
-    },
-    {
-      "label": "Get version - Linux",
-      "value": "cat /var/ossec/etc/ossec-init.conf | grep VERSION"
-    },
-    {
-      "label": "Get version - Linux - use wazuh-control info",
-      "value": "/var/ossec/info/wazuh-control info | grep VERSION"
-    },
-    {
-      "label": "Get info - Linux",
-      "value": "/var/ossec/info/wazuh-control info"
-    }    
-  ],
-  "debug": [
-    {
-      "label": "Service status - systemctl",
-      "value": "systemctl status wazuh-agent"
-    },
-    {
-      "label": "Service status - service",
-      "value": "service wazuh-agent start"
-    },
-    {
-      "label": "Service status - Windows",
-      "value": "TODO"
-    },
-    {
-      "label": "Logs - Linux - get all logs",
-      "value": "cat /var/ossec/logs/ossec.log"
-    },
-    {
-      "label": "Logs - Linux - get errors and warnings",
-      "value": "grep -iE \"err|warn\" /var/ossec/logs/ossec.log"
-    },
-    {
-      "label": "Logs - Linux - filter by agent registration",
-      "value": "grep \"wazuh-agentd\" /var/ossec/logs/ossec.log"
-    },
-    {
-      "label": "Logs - Windows - get all logs",
-      "value": "Get-content C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log"
-    },
-    {
-      "label": "Logs - Windows - filter errors and warnings- NOT TESTED",
-      "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"err\", \"|warn\""
-    },
-    {
-      "label": "Logs - Windows - filter by agent registration",
-      "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"wazuh-agentd\""
+      "label": "Debug",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - systemctl",
+                "value": "systemctl status wazuh-agent"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - service",
+                "value": "service wazuh-agent start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - Windows",
+                "value": "TODO"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - Linux - get all logs",
+                "value": "cat /var/ossec/logs/ossec.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - Linux - get errors and warnings",
+                "value": "grep -iE \"err|warn\" /var/ossec/logs/ossec.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - Linux - filter by agent registration",
+                "value": "grep \"wazuh-agentd\" /var/ossec/logs/ossec.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - Windows - get all logs",
+                "value": "Get-content C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - Windows - filter errors and warnings- NOT TESTED",
+                "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"err\", \"|warn\""
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - Windows - filter by agent registration",
+                "value": "Select-String -Path C:\\Program Files (x86)\\ossec-agent\\logs\\ossec.log -Pattern \"wazuh-agentd\""
+            }
+        }
+      ]
     }
   ]
 }

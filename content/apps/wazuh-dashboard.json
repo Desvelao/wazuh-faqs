@@ -4,161 +4,226 @@
   "description": "The Wazuh dashboard is a flexible and intuitive web user interface for mining, analyzing, and visualizing security events and alerts data. It is also used for the management and monitoring of the Wazuh platform. Additionally, it provides features for role-based access control (RBAC) and single sign on (SSO).  This is based in the OpenSearch Dashboards distribution.",
   "documentationLink": "https://documentation.wazuh.com/current/getting-started/components/wazuh-dashboard.html",
   "icon": "",
-  "info": [
+  "info_tabs": [
     {
-      "type": "table",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "id": "value",
-            "label": "Value",
-            "copyable": true
+      "label": "Info",
+      "content": [        
+        {
+          "type": "table",
+          "table": {
+            "title": "General",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Description"
+              },
+              {
+                "id": "value",
+                "label": "Value",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Installation folder",
+                "value": "/usr/share/wazuh-dashboard"
+              },
+              {
+                "description": "Configuration file (package)",
+                "value": "/etc/wazuh-dashboard/opensearch_dashboards.yml"
+              },
+              {
+                "description": "Configuration file (zip)",
+                "value": "<WAZUH_DASHBOARD_HOME>/config/opensearch_dashboards.yml"
+              },
+              {
+                "description": "Keystore (package)",
+                "value": "/etc/wazuh-dashboard/opensearch_dashboards.keystore"
+              },
+              {
+                "description": "Keystore (zip)",
+                "value": "<WAZUH_DASHBOARD_HOME>/config/opensearch_dashboards.keystore"
+              },          
+              {
+                "description": "Logs",
+                "value": "journalctl -u wazuh-dashboard"
+              },
+              {
+                "description": "Port",
+                "value": "5601"
+              },
+              {
+                "description": "Service",
+                "value": "wazuh-dashboard"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Installation folder",
-            "value": "/usr/share/wazuh-dashboard"
-          },
-          {
-            "description": "Configuration file (package)",
-            "value": "/etc/wazuh-dashboard/opensearch_dashboards.yml"
-          },
-          {
-            "description": "Configuration file (zip)",
-            "value": "<WAZUH_DASHBOARD_HOME>/config/opensearch_dashboards.yml"
-          },
-          {
-            "description": "Keystore (package)",
-            "value": "/etc/wazuh-dashboard/opensearch_dashboards.keystore"
-          },
-          {
-            "description": "Keystore (zip)",
-            "value": "<WAZUH_DASHBOARD_HOME>/config/opensearch_dashboards.keystore"
-          },          
-          {
-            "description": "Logs",
-            "value": "journalctl -u wazuh-dashboard"
-          },
-          {
-            "description": "Port",
-            "value": "5601"
-          },
-          {
-            "description": "Service",
-            "value": "wazuh-dashboard"
+        }
+      ]
+    },
+    {
+      "label": "Backup",
+      "content":[
+        {
+          "type": "table",
+          "title": "Backup folders/files",
+          "table": {
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "File",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Package - Configuration",
+                "value": "/etc/wazuh-dashboard"
+              },
+              {
+                "description": "Package - Certificates - Wazuh installation guide",
+                "value": "/etc/wazuh-dashboard/certs"
+              },
+              {
+                "description": "Docker - Configuration",
+                "value": "/usr/share/wazuh-dashboard/config"
+              },
+              {
+                "description": "Certificates",
+                "value": "All certificates files"
+              }      
+            ]
           }
-        ]
-      }
+        }
+      ]
+    },
+    {
+      "label": "Commands",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - systemctl",
+                "value": "systemctl start wazuh-dashboard"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - service",
+                "value": "service wazuh-dashboard start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - systemctl",
+                "value": "systemctl stop wazuh-dashboard"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - service",
+                "value": "service wazuh-dashboard stop"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards --version"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - Install by URL",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin install <url>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - Install local file",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin install file://<absolute_path_to_local_file>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - Remove",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin remove <plugin_name>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - List",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin list"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Keystore - List",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore list"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Keystore - Add",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore add <setting>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Keystore - Remove",
+                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore remove <setting>"
+            }
+        }
+      ]
+    },
+    {
+      "label": "Debug",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - systemctl",
+                "value": "systemctl status wazuh-dashboard"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - service",
+                "value": "service wazuh-dashboard status"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs (journalctl) - get all logs",
+                "value": "journalctl -u wazuh-dashboard"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs (journalctl) - get logs filtering by errors or warnings",
+                "value": "journalctl -u wazuh-dashboard | grep -iE \"err|warn\""
+            }
+        },
+        {"type": "text", "text": {"value": ""}},
+        {"type": "script", "script": {"language": "yml", "value": "logging.verbose: true", "text": "Enable debug logs in the configuration file (opensearch_dashboards.yml). Require restarting the service after the change."}}
+      ]
     }
-  ],
-  "backup": [
-    {
-      "type": "table",
-      "title": "Backup folders/files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "File",
-            "copyable": true
-          }
-        ],
-        "rows": [
-          {
-            "description": "Package - Configuration",
-            "value": "/etc/wazuh-dashboard"
-          },
-          {
-            "description": "Package - Certificates - Wazuh installation guide",
-            "value": "/etc/wazuh-dashboard/certs"
-          },
-          {
-            "description": "Docker - Configuration",
-            "value": "/usr/share/wazuh-dashboard/config"
-          },
-          {
-            "description": "Certificates",
-            "value": "All certificates files"
-          }      
-        ]
-      }
-    }
-  ],
-  "commands": [
-    {
-      "label": "Service start - systemctl",
-      "value": "systemctl start wazuh-dashboard"
-    },
-    {
-      "label": "Service start - service",
-      "value": "service wazuh-dashboard start"
-    },
-    {
-      "label": "Service stop - systemctl",
-      "value": "systemctl stop wazuh-dashboard"
-    },
-    {
-      "label": "Service stop - service",
-      "value": "service wazuh-dashboard stop"
-    },
-    {
-      "label": "Get version",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards --version"
-    },
-    {
-      "label": "Plugins - Install by URL",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin install <url>"
-    },
-    {
-      "label": "Plugins - Install local file",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin install file://<absolute_path_to_local_file>"
-    },
-    {
-      "label": "Plugins - Remove",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin remove <plugin_name>"
-    },
-    {
-      "label": "Plugins - List",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-plugin list"
-    },
-    {
-      "label": "Keystore - List",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-keystore list"
-    },
-    {
-      "label": "Keystore - Add",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-keystore add <setting>"
-    },
-    {
-      "label": "Keystore - Remove",
-      "value": "<WAZUH_DASHBOARD_PATH>/bin/openserach-dashboards-keystore remove <setting>"
-    }    
-  ],
-  "debug": [
-    {
-      "label": "Service status - systemctl",
-      "value": "systemctl status wazuh-dashboard"
-    },
-    {
-      "label": "Service status - service",
-      "value": "service wazuh-dashboard status"
-    },
-    {
-      "label": "Logs (journalctl) - get all logs",
-      "value": "journalctl -u wazuh-dashboard"
-    },
-    {
-      "label": "Logs (journalctl) - get logs filtering by errors or warnings",
-      "value": "journalctl -u wazuh-dashboard | grep -iE \"err|warn\""
-    }    
   ]
 }

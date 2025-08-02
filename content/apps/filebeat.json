@@ -4,89 +4,137 @@
   "description": "Lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.",
   "documentationLink": "https://www.elastic.co/guide/en/beats/filebeat/7.10/filebeat-overview.html",
   "icon": "",
-  "info": [
+  "info_tabs": [
     {
-      "type": "table",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "id": "value",
-            "label": "Value",
-            "copyable": true
+      "label": "Info",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "General",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Description"
+              },
+              {
+                "id": "value",
+                "label": "Value",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Installation folder",
+                "value": "/usr/share/filebeat"
+              },
+              {
+                "description": "Configuration file",
+                "value": "/etc/filebeat/filebeat.yml"
+              },
+              {
+                "description": "Logs",
+                "value": "/var/log/filebeat/filebeat"
+              },
+              {
+                "description": "Service",
+                "value": "filebeat"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Installation folder",
-            "value": "/usr/share/filebeat"
-          },
-          {
-            "description": "Configuration file",
-            "value": "/etc/filebeat/filebeat.yml"
-          },
-          {
-            "description": "Logs",
-            "value": "/var/log/filebeat/filebeat"
-          },
-          {
-            "description": "Service",
-            "value": "filebeat"
-          }
-        ]
-      }
-    }
-  ],
-  "backup": [],
-  "commands": [
-    {
-      "label": "Service start - systemctl",
-      "value": "systemctl start filebeat"
+        }
+      ]
     },
     {
-      "label": "Service start - service",
-      "value": "service filebeat start"
+      "label": "Backup",
+      "content": []
     },
     {
-      "label": "Service stop - systemctl",
-      "value": "systemctl stop filebeat"
+      "label": "Commands",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - systemctl",
+                "value": "systemctl start filebeat"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - service",
+                "value": "service filebeat start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - systemctl",
+                "value": "systemctl stop filebeat"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - service",
+                "value": "service filebeat stop"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version",
+                "value": "filebeat version"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Update pipelines",
+                "value": "filebeat setup --pipelines"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Update template",
+                "value": "filebeat setup --index-management"
+            }
+        }
+      ]
     },
     {
-      "label": "Service stop - service",
-      "value": "service filebeat stop"
-    },
-    {
-      "label": "Get version",
-      "value": "filebeat version"
-    },
-    {
-      "label": "Update pipelines",
-      "value": "filebeat setup --pipelines"
-    },
-    {
-      "label": "Update template",
-      "value": "filebeat setup --index-management"
-    }
-  ],
-  "debug": [
-    {
-      "label": "Service status - systemctl",
-      "value": "systemctl status filebeat"
-    },
-    {
-      "label": "Service status - service",
-      "value": "service filebeat status"
-    },
-    {
-      "label": "Connection Filebeat to output",
-      "value": "filebeat test output"
-    },
-    {
-      "label": "Logs - Get errors or warning",
-      "value": "grep -iE \"err|warn\" /var/log/filebeat/filebeat"
+      "label": "Debug",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - systemctl",
+                "value": "systemctl status filebeat"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - service",
+                "value": "service filebeat status"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Connection Filebeat to output",
+                "value": "filebeat test output"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - Get errors or warning",
+                "value": "grep -iE \"err|warn\" /var/log/filebeat/filebeat"
+            }
+        }
+      ]
     }
   ]
 }

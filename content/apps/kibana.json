@@ -4,166 +4,231 @@
   "description": "Window into the Elastic Stack. Specifically, it's a browser-based analytics and search dashboard for Elasticsearch.",
   "documentationLink": "https://www.elastic.co/guide/en/kibana/7.16/index.html",
   "icon": "",
-  "info": [
+  "info_tabs": [
     {
-      "type": "table",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "id": "value",
-            "label": "Value",
-            "copyable": true
+      "label": "Info",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "General",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Description"
+              },
+              {
+                "id": "value",
+                "label": "Value",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Installation folder",
+                "value": "/usr/share/kibana"
+              },
+              {
+                "description": "Configuration file (package)",
+                "value": "/etc/kibana/kibana.yml"
+              },
+              {
+                "description": "Configuration file (zip)",
+                "value": "<KIBANA_HOME>/config/kibana.yml"
+              },
+              {
+                "description": "Keystore (package)",
+                "value": "/etc/kibana/kibana.keystore"
+              },
+              {
+                "description": "Keystore (zip)",
+                "value": "<KIBANA_HOME>/config/kibana.keystore"
+              },
+              {
+                "description": "Logs",
+                "value": "journalctl -u kibana"
+              },
+              {
+                "description": "Port",
+                "value": "5601"
+              },
+              {
+                "description": "Service",
+                "value": "kibana"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Installation folder",
-            "value": "/usr/share/kibana"
-          },
-          {
-            "description": "Configuration file (package)",
-            "value": "/etc/kibana/kibana.yml"
-          },
-          {
-            "description": "Configuration file (zip)",
-            "value": "<KIBANA_HOME>/config/kibana.yml"
-          },
-          {
-            "description": "Keystore (package)",
-            "value": "/etc/kibana/kibana.keystore"
-          },
-          {
-            "description": "Keystore (zip)",
-            "value": "<KIBANA_HOME>/config/kibana.keystore"
-          },
-          {
-            "description": "Logs",
-            "value": "journalctl -u kibana"
-          },
-          {
-            "description": "Port",
-            "value": "5601"
-          },
-          {
-            "description": "Service",
-            "value": "kibana"
+        }
+      ]
+    },
+    {
+      "label": "Backup",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "Backup folders/files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "File",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Package - Configuration",
+                "value": "/etc/kibana"
+              },
+              {
+                "description": "Package - Certificates - Wazuh installation guide",
+                "value": "/etc/kibana/certs"
+              },
+              {
+                "description": "Docker - Configuration",
+                "value": "/usr/share/kibana/config"
+              },
+              {
+                "description": "Certificates",
+                "value": "All certificates files"
+              }         
+            ]
           }
-        ]
-      }
-    }
-    
-  ],
-  "backup": [
-    {
-      "type": "table",
-      "title": "Backup folders/files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "File",
-            "copyable": true
-          }
-        ],
-        "rows": [
-          {
-            "description": "Package - Configuration",
-            "value": "/etc/kibana"
-          },
-          {
-            "description": "Package - Certificates - Wazuh installation guide",
-            "value": "/etc/kibana/certs"
-          },
-          {
-            "description": "Docker - Configuration",
-            "value": "/usr/share/kibana/config"
-          },
-          {
-            "description": "Certificates",
-            "value": "All certificates files"
-          }         
-        ]
-      }
-    }
-  ],
-  "commands": [
-    {
-      "label": "Service start - systemctl",
-      "value": "systemctl start kibana"
+        }
+      ]
     },
     {
-      "label": "Service start - service",
-      "value": "service kibana start"
+      "label": "Commands",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - systemctl",
+                "value": "systemctl start kibana"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - service",
+                "value": "service kibana start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - systemctl",
+                "value": "systemctl stop kibana"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - service",
+                "value": "service kibana stop"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version",
+                "value": "<KIBANA_PATH>/bin/kibana --version"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - Install by URL",
+                "value": "<KIBANA_PATH>/bin/kibana-plugin install <url>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - Install local file",
+                "value": "<KIBANA_PATH>/bin/kibana-plugin install file://<absolute_path_to_local_file>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - Remove",
+                "value": "<KIBANA_PATH>/bin/kibana-plugin remove <plugin_name>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - List",
+                "value": "<KIBANA_PATH>/bin/kibana-plugin list"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Keystore - List",
+                "value": "<KIBANA_PATH>/bin/kibana-keystore list"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Keystore - Add",
+                "value": "<KIBANA_PATH>/bin/kibana-keystore add <setting>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Keystore - Remove",
+                "value": "<KIBANA_PATH>/bin/kibana-keystore remove <setting>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Remove bundles (Kibana old)",
+                "value": "rm -rf /usr/share/kibana/optimize/bundles"
+            }
+        }
+      ]
     },
     {
-      "label": "Service stop - systemctl",
-      "value": "systemctl stop kibana"
-    },
-    {
-      "label": "Service stop - service",
-      "value": "service kibana stop"
-    },
-    {
-      "label": "Get version",
-      "value": "<KIBANA_PATH>/bin/kibana --version"
-    },
-    {
-      "label": "Plugins - Install by URL",
-      "value": "<KIBANA_PATH>/bin/kibana-plugin install <url>"
-    },
-    {
-      "label": "Plugins - Install local file",
-      "value": "<KIBANA_PATH>/bin/kibana-plugin install file://<absolute_path_to_local_file>"
-    },
-    {
-      "label": "Plugins - Remove",
-      "value": "<KIBANA_PATH>/bin/kibana-plugin remove <plugin_name>"
-    },
-    {
-      "label": "Plugins - List",
-      "value": "<KIBANA_PATH>/bin/kibana-plugin list"
-    },
-    {
-      "label": "Keystore - List",
-      "value": "<KIBANA_PATH>/bin/kibana-keystore list"
-    },
-    {
-      "label": "Keystore - Add",
-      "value": "<KIBANA_PATH>/bin/kibana-keystore add <setting>"
-    },
-    {
-      "label": "Keystore - Remove",
-      "value": "<KIBANA_PATH>/bin/kibana-keystore remove <setting>"
-    },
-    {
-      "label": "Remove bundles (Kibana old)",
-      "value": "rm -rf /usr/share/kibana/optimize/bundles"
-    }    
-  ],
-  "debug": [
-    {
-      "label": "Service status - systemctl",
-      "value": "systemctl status kibana"
-    },
-    {
-      "label": "Service status - service",
-      "value": "service kibana status"
-    },
-    {
-      "label": "Logs (journalctl) - get all logs",
-      "value": "journalctl -u kibana"
-    },
-    {
-      "label": "Logs (journalctl) - get logs filtering by errors or warnings",
-      "value": "journalctl -u kibana | grep -iE \"err|warn\""
+      "label": "Debug",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - systemctl",
+                "value": "systemctl status kibana"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - service",
+                "value": "service kibana status"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs (journalctl) - get all logs",
+                "value": "journalctl -u kibana"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs (journalctl) - get logs filtering by errors or warnings",
+                "value": "journalctl -u kibana | grep -iE \"err|warn\""
+            }
+        }
+      ]
     }
   ]
 }

@@ -443,10 +443,11 @@ function main({globalTestSuite, tests, options}){
         return [...browsersSet].sort()
     })(uiTests)
 
-    return `${globalTestSuite ? `# ${globalTestSuite}\n\n` : ''}Legend:
-${testResults.map(({emoji_markdown, value}) => `${emoji_markdown}: ${value}`).join('\n')}
-
-${uiTests.length ? `## UI
+    return [
+        globalTestSuite ? `# ${globalTestSuite}` : '',
+        `Legend:
+${testResults.map(({emoji_markdown, value}) => `${emoji_markdown}: ${value}`).join('\n')}`,
+    uiTests.length ? `## UI
 
 | Test |${uiTestsBrowsers.map(browser => ` ${browser} |`).join('')}
 | --- | ${uiTestsBrowsers.map(() => ` --- |`).join('')}
@@ -459,9 +460,8 @@ ${uiTests.map(({ title, url, browsers, results }) => {
 ${browsers.map((browser) => `
 ${browser} - ${transformTestResultToMarkdown(results.find(({label}) => label === browser).result, options["test.status.enabled"])}`).join('\n')}
 
-</details>`}).join('\n\n')}
-`: ''}
-${backendTests.length ? `## Backend
+</details>`}).join('\n\n')}`: '',
+    backendTests.length ? `## Backend
 
 | Test | Result |
 | --- |  --- |
@@ -472,9 +472,8 @@ ${backendTests.map(({ title, url, results }) => {
     return `<details>
 <summary>${transformTestResultToMarkdown(results[0].result, options["test.status.enabled"])} ${url ? `<a href="${url}" target="_blank">${title}</a>` : title}</summary>
 
-</details>`}).join('\n\n')}
-`: ''}
-${otherTests.length ? `## Other
+</details>`}).join('\n\n')}`: '',
+otherTests.length ? `## Other
 
 | Test | Result |
 | --- |  --- |
@@ -485,8 +484,8 @@ ${otherTests.map(({ title, url, results }) => {
     return `<details>
 <summary>${transformTestResultToMarkdown(results[0].result, options["test.status.enabled"])} ${url ? `<a href="${url}" target="_blank">${title}</a>` : title}</summary>
 
-</details>`}).join('\n\n')}
-`: ''}`
+</details>`}).join('\n\n')}`: ''
+    ].filter(Boolean).join('\n\n')
     
 }
 

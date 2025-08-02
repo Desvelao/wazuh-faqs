@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./tabs.css"
 import { classNames } from "../../utils"
+import { navigate } from "gatsby"
 
 export const Tabs = ({ tabs }) => {
   const [selectedTab, setSelectedTab] = useState(tabs[0].id)
@@ -26,3 +27,43 @@ export const Tabs = ({ tabs }) => {
     </>
   )
 }
+
+export const TabsURLManaged = ({ tabs, location }) => {
+  const [selectedTab, setSelectedTab] = useState(tabs[0].id)
+  React.useEffect(() => {
+    const params = new URLSearchParams(location.search)
+    const tabParam = params.get("tab")
+    if(tabParam && tabs.some(({id}) => tabParam === id)){
+      setSelectedTab(tabParam)
+    }
+  },[])
+
+  const onClickTab = (id) => {
+    setSelectedTab(id)
+    navigate(`${location.pathname}?tab=${id}`, {replace: false})
+  }
+
+  return (
+    <>
+      <div className="tabs">
+        <ul>
+          {tabs.map((tab) => (
+            <li
+              className={`cursor-pointer ${classNames({
+                "tab-selected": tab.id === selectedTab,
+              })}`}
+              onClick={() => onClickTab(tab.id)}
+              key={`tab-${tab.id}`}
+            >
+              {tab.label}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>{tabs.find((tab) => tab.id === selectedTab).render()}</div>
+    </>
+  )
+}
+
+
+

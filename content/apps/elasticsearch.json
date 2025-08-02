@@ -4,187 +4,247 @@
   "description": "Search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents",
   "documentationLink": "https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html",
   "icon": "",
-  "info": [
+  "info_tabs": [
     {
-      "type": "table",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Description"
-          },
-          {
-            "id": "value",
-            "label": "Value",
-            "copyable": true
+      "label": "Info",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "General",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Description"
+              },
+              {
+                "id": "value",
+                "label": "Value",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Installation folder",
+                "value": "/usr/share/elasticsearch"
+              },
+              {
+                "description": "Configuration file (package)",
+                "value": "/etc/elasticsearch/elasticsearch.yml"
+              },
+              {
+                "description": "Configuration file (Docker/zip)",
+                "value": "<ELASTICSEARCH_HOME>/config/elasticsearch.yml"
+              },
+              {
+                "description": "Logs",
+                "value": "/var/log/elasticsearch/<CLUSTER_NAME>.log"
+              },
+              {
+                "description": "Logs",
+                "value": "journalctl -u elasticsearch"
+              },
+              {
+                "description": "Port API",
+                "value": "9200"
+              },
+              {
+                "description": "Port Service",
+                "value": "9600"
+              },
+              {
+                "description": "Service",
+                "value": "elasticsearch"
+              },
+              {
+                "description": "JVM options file (package)",
+                "value": "/etc/elasticsearch/jvm.options"
+              },
+              {
+                "description": "JVM options file (Docker/zip)",
+                "value": "<ELASTICSEARCH_HOME>/config/jvm.options"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Installation folder",
-            "value": "/usr/share/elasticsearch"
-          },
-          {
-            "description": "Configuration file (package)",
-            "value": "/etc/elasticsearch/elasticsearch.yml"
-          },
-          {
-            "description": "Configuration file (Docker/zip)",
-            "value": "<ELASTICSEARCH_HOME>/config/elasticsearch.yml"
-          },
-          {
-            "description": "Logs",
-            "value": "/var/log/elasticsearch/<CLUSTER_NAME>.log"
-          },
-          {
-            "description": "Logs",
-            "value": "journalctl -u elasticsearch"
-          },
-          {
-            "description": "Port API",
-            "value": "9200"
-          },
-          {
-            "description": "Port Service",
-            "value": "9600"
-          },
-          {
-            "description": "Service",
-            "value": "elasticsearch"
-          },
-          {
-            "description": "JVM options file (package)",
-            "value": "/etc/elasticsearch/jvm.options"
-          },
-          {
-            "description": "JVM options file (Docker/zip)",
-            "value": "<ELASTICSEARCH_HOME>/config/jvm.options"
-          }
-        ]
-      }
-    },
-    {
-      "type": "commands",
-      "title": "API request",
-      "contentCommands": [
-        {
-          "label": "Cluster - Health",
-          "value": "GET /_cluster/health"
         },
         {
-          "label": "Cat - Indices",
-          "value": "GET /_cat/indices"
+            "type": "command",
+            "command": {
+                "label": "Cluster - Health",
+                "value": "GET /_cluster/health"
+            }
         },
         {
-          "label": "Cat - Indices (display column names)",
-          "value": "GET /_cat/indices?v"
+            "type": "command",
+            "command": {
+                "label": "Cat - Indices",
+                "value": "GET /_cat/indices"
+            }
         },
         {
-          "label": "Cat - Indices (using index pattern)",
-          "value": "GET /_cat/indices/<INDEX_PATTERN>"
+            "type": "command",
+            "command": {
+                "label": "Cat - Indices (display column names)",
+                "value": "GET /_cat/indices?v"
+            }
         },
         {
-          "label": "Cat - Templates",
-          "value": "GET /_cat/templates"
+            "type": "command",
+            "command": {
+                "label": "Cat - Indices (using index pattern)",
+                "value": "GET /_cat/indices/<INDEX_PATTERN>"
+            }
         },
         {
-          "label": "Template - (using template name)",
-          "value": "GET /_template/<TEMPLATE_NAME>"
+            "type": "command",
+            "command": {
+                "label": "Cat - Templates",
+                "value": "GET /_cat/templates"
+            }
         },
         {
-          "label": "Reindex",
-          "value": "GET /_reindex/\n{\n\t\"source\":{\"index\": \"<SOURCE_INDEX>\"},\n\t\"dest\":{\"index\": \"<DESTINATION_INDEX>\"}\n}"
+            "type": "command",
+            "command": {
+                "label": "Template - (using template name)",
+                "value": "GET /_template/<TEMPLATE_NAME>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Reindex",
+                "value": "GET /_reindex/\n{\n\t\"source\":{\"index\": \"<SOURCE_INDEX>\"},\n\t\"dest\":{\"index\": \"<DESTINATION_INDEX>\"}\n}"
+            }
         }
       ]
-    }
-  ],
-  "backup": [
+    },
     {
-      "type": "table",
-      "title": "Backup folders/files",
-      "contentTable": {
-        "columns": [
-          {
-            "id": "description",
-            "label": "Key"
-          },
-          {
-            "id": "value",
-            "label": "File",
-            "copyable": true
+      "label": "Backup",
+      "content": [
+        {
+          "type": "table",
+          "table": {
+            "title": "Backup folders/files",
+            "columns": [
+              {
+                "id": "description",
+                "label": "Key"
+              },
+              {
+                "id": "value",
+                "label": "File",
+                "copyable": true
+              }
+            ],
+            "rows": [
+              {
+                "description": "Package - Configuration",
+                "value": "/etc/elasticsearch"
+              },
+              {
+                "description": "Package - Certificates - Wazuh installation guide",
+                "value": "/etc/elasticsearch/certs"
+              },
+              {
+                "description": "Docker - Configuration",
+                "value": "/usr/share/elasticsearch/config"
+              },
+              {
+                "description": "Certificates",
+                "value": "All certificates files"
+              },
+              {
+                "description": "Alternative - Configuration",
+                "value": "$ES_PATH_CONF directory"
+              },
+              {
+                "description": "OpenDistro for Elasticsearch - Initial configuration",
+                "value": "/usr/share/elasticsearch/plugins/opendistro_security/securityconfig"
+              }
+            ]
           }
-        ],
-        "rows": [
-          {
-            "description": "Package - Configuration",
-            "value": "/etc/elasticsearch"
-          },
-          {
-            "description": "Package - Certificates - Wazuh installation guide",
-            "value": "/etc/elasticsearch/certs"
-          },
-          {
-            "description": "Docker - Configuration",
-            "value": "/usr/share/elasticsearch/config"
-          },
-          {
-            "description": "Certificates",
-            "value": "All certificates files"
-          },
-          {
-            "description": "Alternative - Configuration",
-            "value": "$ES_PATH_CONF directory"
-          },
-          {
-            "description": "OpenDistro for Elasticsearch - Initial configuration",
-            "value": "/usr/share/elasticsearch/plugins/opendistro_security/securityconfig"
-          }
-        ]
-      }
-    }
-  ],
-  "commands": [
-    {
-      "label": "Service start - systemctl",
-      "value": "systemctl start elasticsearch"
+        }
+      ]
     },
     {
-      "label": "Service start - service",
-      "value": "service elasticsearch start"
+      "label": "Commands",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - systemctl",
+                "value": "systemctl start elasticsearch"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service start - service",
+                "value": "service elasticsearch start"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - systemctl",
+                "value": "systemctl stop elasticsearch"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service stop - service",
+                "value": "service elasticsearch stop"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Get version",
+                "value": "<ELASTICSEARCH_PATH>/bin/elasticsearch --version"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins - List",
+                "value": "<ELASTICSEARCH_PATH>/bin/elasticsearch-plugin list"
+            }
+        }
+      ]
     },
     {
-      "label": "Service stop - systemctl",
-      "value": "systemctl stop elasticsearch"
-    },
-    {
-      "label": "Service stop - service",
-      "value": "service elasticsearch stop"
-    },
-    {
-      "label": "Get version",
-      "value": "<ELASTICSEARCH_PATH>/bin/elasticsearch --version"
-    },
-    {
-      "label": "Plugins - List",
-      "value": "<ELASTICSEARCH_PATH>/bin/elasticsearch-plugin list"
-    }
-  ],
-  "debug": [
-    {
-      "label": "Service status - systemctl",
-      "value": "systemctl status elasticsearch"
-    },
-    {
-      "label": "Service status - service",
-      "value": "service elasticsearch status"
-    },
-    {
-      "label": "Logs - get logs filtering by errors or warnings",
-      "value": "grep -iE \"err|warn\" /var/log/elasticsearch/<CLUSTER_NAME>.log"
-    },
-    {
-      "label": "Logs - get logs filtering by errors or warnings with context",
-      "value": "grep -iE \"err|warn\" -C 10 /var/log/elasticsearch/<CLUSTER_NAME>.log"
+      "label": "Debug",
+      "content": [
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - systemctl",
+                "value": "systemctl status elasticsearch"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Service status - service",
+                "value": "service elasticsearch status"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - get logs filtering by errors or warnings",
+                "value": "grep -iE \"err|warn\" /var/log/elasticsearch/<CLUSTER_NAME>.log"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Logs - get logs filtering by errors or warnings with context",
+                "value": "grep -iE \"err|warn\" -C 10 /var/log/elasticsearch/<CLUSTER_NAME>.log"
+            }
+        }
+      ]
     }
   ]
 }
