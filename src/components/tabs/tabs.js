@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./tabs.css"
 import { classNames } from "../../utils"
 import { navigate } from "gatsby"
+import { useBasePath } from "../../hooks"
 
 export const Tabs = ({ tabs }) => {
   const [selectedTab, setSelectedTab] = useState(tabs[0].id)
@@ -30,6 +31,7 @@ export const Tabs = ({ tabs }) => {
 
 export const TabsURLManaged = ({ tabs, location }) => {
   const [selectedTab, setSelectedTab] = useState(tabs[0].id)
+  const basePath = useBasePath()
   React.useEffect(() => {
     const params = new URLSearchParams(location.search)
     const tabParam = params.get("tab")
@@ -40,7 +42,8 @@ export const TabsURLManaged = ({ tabs, location }) => {
 
   const onClickTab = (id) => {
     setSelectedTab(id)
-    navigate(`${location.pathname}?tab=${id}`, {replace: false})
+    const pathname = location.pathname.replace(new RegExp(`^${basePath}`), '')
+    navigate(`${pathname}?tab=${id}`, {replace: false})
   }
 
   return (
