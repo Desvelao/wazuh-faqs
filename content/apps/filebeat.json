@@ -133,6 +133,34 @@
                 "label": "Logs - Get errors or warning",
                 "value": "grep -iE \"err|warn\" /var/log/filebeat/filebeat"
             }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Check the alerts file is opened. Filebeat logs.",
+              "value": "grep alerts /var/log/filebeat/filebeat"
+          }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Check the alerts file is opened. lsof.",
+              "value": "lsof /var/ossec/logs/alerts/alerts.json"
+          }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Check the archives file is opened. Filebeat logs.",
+              "value": "grep alerts /var/log/filebeat/filebeat"
+          }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Check the archives file is opened. lsof.",
+              "value": "lsof /var/ossec/logs/archives/archives.json"
+          }
         }
       ]
     }
