@@ -135,58 +135,121 @@
         {
             "type": "command",
             "command": {
-                "label": "Get version",
+                "label": "Get OSD version",
                 "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards --version"
             }
         },
         {
             "type": "command",
             "command": {
-                "label": "Plugins - Install by URL",
-                "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin install <url>"
+                "label": "Plugins (package) - Install by URL",
+                "value": "sudo -u wazuh-dashboard <WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin install <url>"
             }
         },
         {
             "type": "command",
             "command": {
-                "label": "Plugins - Install local file",
+                "label": "Plugins (package) - Install local file",
+                "value": "sudo -u wazuh-dashboard <WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin install file://<absolute_path_to_local_file>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins (package) - Remove",
+                "value": "sudo -u wazuh-dashboard <WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin remove <plugin_name>"
+            }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins (package) - List",
+                "value": "sudo -u wazuh-dashboard <WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin list"
+            }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Keystore (package) - List",
+              "value": "sudo -u wazuh-dashboard <WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore list"
+          }
+      },
+      {
+          "type": "command",
+          "command": {
+              "label": "Keystore (package) - Add",
+              "value": "sudo -u wazuh-dashboard <WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore add <setting>"
+          }
+      },
+      {
+          "type": "command",
+          "command": {
+              "label": "Keystore (package) - Remove",
+              "value": "sudo -u wazuh-dashboard <WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore remove <setting>"
+          }
+      },
+        {
+          "type": "command",
+          "command": {
+              "label": "Plugins (Docker) - Install by URL",
+              "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin install <url>"
+          }
+        },
+        {
+            "type": "command",
+            "command": {
+                "label": "Plugins (Docker) - Install local file",
                 "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin install file://<absolute_path_to_local_file>"
             }
         },
         {
             "type": "command",
             "command": {
-                "label": "Plugins - Remove",
+                "label": "Plugins (Docker) - Remove",
                 "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin remove <plugin_name>"
             }
         },
         {
             "type": "command",
             "command": {
-                "label": "Plugins - List",
+                "label": "Plugins (Docker) - List",
                 "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-plugin list"
             }
         },
         {
             "type": "command",
             "command": {
-                "label": "Keystore - List",
+                "label": "Keystore (Docker) - List",
                 "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore list"
             }
         },
         {
             "type": "command",
             "command": {
-                "label": "Keystore - Add",
+                "label": "Keystore (Docker) - Add",
                 "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore add <setting>"
             }
         },
         {
             "type": "command",
             "command": {
-                "label": "Keystore - Remove",
+                "label": "Keystore (Docker) - Remove",
                 "value": "<WAZUH_DASHBOARD_PATH>/bin/opensearch-dashboards-keystore remove <setting>"
             }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Get Index patterns - Global tenant",
+              "value": "curl -k -u <USER>:<PASSWORD> 'https://<WAZUH_DASHBOARD_DNS_OR_IP>:<WAZUH_DASHBOARD_PORT>/api/saved_objects/_find?fields=title&fields=type&per_page=10000&type=index-pattern'"
+          }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Get Index patterns - Other tenant",
+              "value": "curl -k -u <USER>:<PASSWORD> -H 'securitytenant: <TENANT_NAME>' 'https://<WAZUH_DASHBOARD_DNS_OR_IP>:<WAZUH_DASHBOARD_PORT>/api/saved_objects/_find?fields=title&fields=type&per_page=10000&type=index-pattern'"
+          }
         }
       ]
     },

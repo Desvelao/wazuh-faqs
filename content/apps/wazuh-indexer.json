@@ -111,7 +111,14 @@
                 "label": "Reindex",
                 "value": "GET /_reindex/\n{\n\t\"source\":{\"index\": \"<SOURCE_INDEX>\"},\n\t\"dest\":{\"index\": \"<DESTINATION_INDEX>\"}\n}"
             }
-        }
+        },
+        {
+          "type": "command",
+          "command": {
+              "label": "Index was changed - monitor max_seq_no value",
+              "value": "GET <INDEX_NAME>/_stats?level=shards&filter_path=indices.*.shards.*.seq_no"
+          }
+        }        
       ]
     },
     {
